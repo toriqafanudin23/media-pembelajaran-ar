@@ -1,0 +1,42 @@
+import CardMenu from '../components/CardMenu';
+
+const Home = () => {
+  const urlImage = import.meta.env.VITE_URL_IMAGE;
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 p-6 inter-primary flex items-center justify-center flex-col text-white">
+      {/* Header */}
+      <header className="mb-8 text-center">
+        <h1 className="text-4xl font-extrabold mb-2 text-teal-400">
+          Materi Bangun Ruang
+        </h1>
+      </header>
+
+      {/* Menu Cards */}
+      <div className="flex flex-col items-center justify-center gap-4 w-full">
+        <CardMenu
+          title="Volume Kubus"
+          icon={urlImage + 'icon-volume.png'}
+          deskripsi="Pelajari cara menghitung volume bangun ruang secara interaktif."
+          to="/volume"
+          dark
+        />
+        <CardMenu
+          title="Luas Permukaan"
+          icon={urlImage + 'icon-jaring.png'}
+          deskripsi="Pahami konsep luas permukaan dengan bantuan visualisasi."
+          to="/luas"
+          dark
+        />
+        <CardMenu
+          title="Quiz Interaktif"
+          icon={urlImage + 'icon-tanya.png'}
+          deskripsi="Uji pemahamanmu melalui kuis seru dan edukatif."
+          to="/quiz"
+          dark
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Home;
