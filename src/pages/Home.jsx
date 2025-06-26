@@ -1,7 +1,7 @@
 import CardMenu from '../components/CardMenu';
 
 const Home = () => {
-  const urlImage = import.meta.env.VITE_URL_IMAGE;
+  const urlImage = import.meta.env.VITE_URL_ICON;
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 p-6 inter-primary flex items-center justify-center flex-col text-white">
       {/* Header */}
@@ -14,7 +14,7 @@ const Home = () => {
       {/* Menu Cards */}
       <div className="flex flex-col items-center justify-center gap-4 w-full">
         <CardMenu
-          title="Volume Kubus"
+          title="Volume"
           icon={urlImage + 'icon-volume.png'}
           deskripsi="Pelajari cara menghitung volume bangun ruang secara interaktif."
           to="/volume"
@@ -28,7 +28,7 @@ const Home = () => {
           dark
         />
         <CardMenu
-          title="Quiz Interaktif"
+          title="Quiz"
           icon={urlImage + 'icon-tanya.png'}
           deskripsi="Uji pemahamanmu melalui kuis seru dan edukatif."
           to="/quiz"

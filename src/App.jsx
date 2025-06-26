@@ -3,6 +3,7 @@ import Cover from './pages/Cover';
 import NotFound from './pages/NotFound';
 import Petunjuk from './pages/Petunjuk';
 import Home from './pages/Home';
+import Volume from './pages/Volume';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Cover />} />
         <Route path="/petunjuk" element={<Petunjuk />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/volume" element={<Volume />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
