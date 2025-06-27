@@ -2,6 +2,7 @@ import Image from '../components/Image';
 import InputSubmit from '../components/InputSubmit';
 import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
+import Simulasi from '../components/SimulasiAR';
 import { Ha1, Ha2, Par, ParLatex } from '../components/Text';
 
 const Volume = () => {
@@ -14,15 +15,17 @@ const Volume = () => {
 
           <Ha2 text="A. Volume Kubus dan Balok" />
 
-          <Image src="rubik1.png" nama="Gambar 1. Rubik" />
+          <Image src="rubik2.png" nama="Gambar 1. Rubik" />
 
-          <Par
-            text="Pernahkah kamu bermain rubik? Rubik merupakan permainan puzzle warna
-          berbentuk kubus dengan ukuran tertentu. Jika kubus tersusun dari kubus
-          satuan, maka berapakah banyaknya kubus satuan yang menyusun rubik di
-          atas?"
+          <Par text="Pernahkah kamu bermain rubik? Rubik merupakan permainan puzzle warna berbentuk kubus dengan ukuran tertentu. Jika kubus tersusun dari kubus satuan, maka berapakah banyaknya kubus satuan yang menyusun Rubik di atas?" />
+
+          <Par text="Untuk membantumu menghitung banyaknya kubus satuan penyusun Rubik pada Gambar 1, perhatikan simulasi berikut." />
+
+          <Simulasi
+            urlAR="https://mywebar.com/p/Project_1_w7y625xuc5"
+            model3D="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/animasi/kubus-warna-2-anim.glb"
+            scale={0.8}
           />
-          <InputSubmit />
 
           <Par text="Setelah menghitung dengan bantuan Augmented Reality, jumlah kubus satuan penyusun Rubik adalah 9. Selanjutnya, tanpa bantuan animasi, hitunglah jumlah kubus satuan pada objek Augmented Reality berikut!" />
           <InputSubmit />
