@@ -39,7 +39,7 @@ const Navigasi = ({ onNavigate }) => {
     <>
       {/* Header */}
       <div
-        className={`fixed top-0 left-0 w-full bg-slate-800 h-12 z-50 flex items-center justify-end px-4 sm:px-8 shadow-md transition-transform duration-300 ${
+        className={`fixed top-0 left-0 w-full bg-slate-800 h-14 z-50 flex items-center justify-end px-4 sm:px-8 shadow-md transition-transform duration-300 ${
           show ? 'translate-y-0' : '-translate-y-full'
         }`}
       >

@@ -2,7 +2,7 @@ const Image = ({ src, nama }) => {
   const urlImage = import.meta.env.VITE_URL_IMAGE;
 
   return (
-    <div className="w-60 mx-auto mb-4 rounded-xl overflow-hidden shadow">
+    <div className="w-60 mx-auto mt-4 rounded-xl overflow-hidden shadow">
       <img
         src={urlImage + src}
         alt="Rubik"

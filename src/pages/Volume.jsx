@@ -1,34 +1,76 @@
 import Image from '../components/Image';
 import InputSubmit from '../components/InputSubmit';
+import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
+import { Ha1, Ha2, Par, ParLatex } from '../components/Text';
 
 const Volume = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-slate-100 px-6 py-16 inter-primary text-slate-800">
-      <Navigasi />
-      <div className="max-w-xl mx-auto">
-        {/* Judul */}
-        <h1 className="text-3xl font-bold text-teal-600 mb-4 text-center">
-          Volume Bangun Ruang Sisi Datar
-        </h1>
+    <>
+      <div className="min-h-screen bg-white px-6 pt-18 mb-4 inter-primary text-slate-800">
+        <Navigasi />
+        <div className="max-w-xl mx-auto">
+          <Ha1 text="Volume Bangun Ruang Sisi Datar" />
 
-        <h2 className="text-2xl font-semibold text-slate-700 mb-2">
-          A. Volume Kubus dan Balok
-        </h2>
+          <Ha2 text="A. Volume Kubus dan Balok" />
 
-        {/* Gambar Rubik */}
-        <Image src="rubik1.png" nama="Gambar 1. Rubik" />
+          <Image src="rubik1.png" nama="Gambar 1. Rubik" />
 
-        {/* Deskripsi */}
-        <p className="text-base leading-relaxed text-slate-700 text-justify">
-          Pernahkah kamu bermain rubik? Rubik merupakan permainan puzzle warna
+          <Par
+            text="Pernahkah kamu bermain rubik? Rubik merupakan permainan puzzle warna
           berbentuk kubus dengan ukuran tertentu. Jika kubus tersusun dari kubus
           satuan, maka berapakah banyaknya kubus satuan yang menyusun rubik di
-          atas?
-        </p>
-        <InputSubmit />
+          atas?"
+          />
+          <InputSubmit />
+
+          <Par text="Setelah menghitung dengan bantuan Augmented Reality, jumlah kubus satuan penyusun Rubik adalah 9. Selanjutnya, tanpa bantuan animasi, hitunglah jumlah kubus satuan pada objek Augmented Reality berikut!" />
+          <InputSubmit />
+          <Par text="Setelah kamu berhasil menghitung jumlah kubus dengan bantuan animasi, sekarang coba hitung jumlah kubus satuan penyusun kubus pada Gambar 2." />
+          <InputSubmit />
+          <Image src="kubus4x4.png" nama="Gambar 2. Kubus" />
+          <Par text="Dari perhitungan yang telah kamu lakukan, dapat disimpulkan bahwa kubus yang tersusun dari 27 kubus satuan memiliki volume sebesar 27 satuan kubik. Sementara itu, kubus yang tersusun dari 64 kubus satuan memiliki volume sebesar 64 satuan kubik." />
+          <Par text="Sebelumnya, kamu telah menggunakan satuan kubik untuk menyatakan volume. Sekarang, bagaimana jika kubus satuan penyusun kubus memiliki panjang rusuk 1 cm, seperti yang terlihat pada Gambar 3." />
+          <Image src="kubus1cm.png" nama="Gambar 3. Kubus" />
+          <Par text="Pada gambar 3, kubus memiliki volume 1 cm<sup>3</sup>. Sedangkan pada gambar 4, kubus memiliki volume 8 cm<sup>3</sup>." />
+          <Image src="kubus2x2.png" nama="Gambar 4. Kubus" />
+          <Par text="Ukuran rusuk kubus satuan tidak harus 1 cm; bisa juga 1 dm, 1 m, 1 mm, ataupun ukuran lainnya." />
+
+          <Par text="Terdapat cara yang lebih mudah untuk menghitung volume kubus tanpa harus menghitung satu per satu kubus satuannya, yaitu dengan mengalikan banyaknya kubus satuan penyusun rusuk panjang, rusuk lebar, dan rusuk tinggi." />
+          <Image src="kubusplt.png" nama="Gambar 5. Kubus" />
+          <div className="mt-4">
+            <ParLatex
+              text={
+                <>
+                  {'\\( p \\)'}: Banyaknya kubus satuan yang menyusun rusuk
+                  panjang.
+                </>
+              }
+            />
+            <ParLatex
+              text={
+                <>
+                  {'\\( l \\)'}: Banyaknya kubus satuan yang menyusun rusuk
+                  lebar.
+                </>
+              }
+            />
+            <ParLatex
+              text={
+                <>
+                  {'\\( t \\)'}: Banyaknya kubus satuan yang menyusun rusuk
+                  tinggi.
+                </>
+              }
+            />
+          </div>
+          <ParLatex text={<>$$V = p \times l \times t$$</>} />
+          <ParLatex text={<>$$V = 4 \times 4 \times 4 = 64$$</>} />
+          <Par text="Jadi, volume kubus pada Gambar 5 adalah 64 satuan<sup>3</sup>." />
+        </div>
       </div>
-    </div>
+      <NavFooter prev="/home" next="volume2" />
+    </>
   );
 };
 
