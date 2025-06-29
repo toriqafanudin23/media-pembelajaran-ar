@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navigasi = ({ onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +11,9 @@ const Navigasi = ({ onNavigate }) => {
     const handleScroll = () => {
       const currentY = window.scrollY;
       if (currentY > lastScrollY && currentY > 50) {
-        setShow(false); // scroll ke bawah
+        setShow(false);
       } else {
-        setShow(true); // scroll ke atas
+        setShow(true);
       }
       setLastScrollY(currentY);
     };
@@ -21,17 +22,18 @@ const Navigasi = ({ onNavigate }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const BarMobile = ({ title }) => (
+  const BarMobile = ({ title, to }) => (
     <li>
-      <button
+      <Link
+        to={to}
         onClick={() => {
           onNavigate(title);
           setIsOpen(false);
         }}
-        className="w-full text-left px-6 py-3 hover:bg-slate-700 transition"
+        className="w-full block text-left px-6 py-3 hover:bg-slate-700 transition"
       >
         {title}
-      </button>
+      </Link>
     </li>
   );
 
@@ -72,10 +74,10 @@ const Navigasi = ({ onNavigate }) => {
       {isOpen && (
         <div className="absolute top-12 left-0 w-full bg-slate-800 sm:hidden z-40 shadow-md">
           <ul className="flex flex-col text-white text-base">
-            <BarMobile title="Home" />
-            <BarMobile title="Volume" />
-            <BarMobile title="Luas Permukaan" />
-            <BarMobile title="Quiz" />
+            <BarMobile title="Home" to="/home" />
+            <BarMobile title="Volume" to="/volume" />
+            <BarMobile title="Luas Permukaan" to="/luas-permukaan" />
+            <BarMobile title="Quiz" to="/quiz" />
           </ul>
         </div>
       )}

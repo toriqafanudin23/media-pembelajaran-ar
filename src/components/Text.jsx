@@ -15,6 +15,32 @@ export const Par = ({ text = '' }) => {
   );
 };
 
+export const ParSoal = ({ text = '', no = '', latex, text2 = '' }) => {
+  useEffect(() => {
+    if (window.MathJax?.typesetPromise) {
+      window.MathJax.typesetPromise();
+    }
+  }, [text]);
+
+  return (
+    <div className="flex flex-row mt-4">
+      <p className="mr-2 text-slate-700 w-6">{no}</p>
+      <div>
+        <p
+          className="text-base leading-relaxed text-slate-700 text-justify"
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+        <p>Pembahasan:</p>
+        <ParLatex text={latex} />
+        <p
+          className="text-base leading-relaxed text-slate-700 text-justify"
+          dangerouslySetInnerHTML={{ __html: text2 }}
+        />
+      </div>
+    </div>
+  );
+};
+
 export const ParLatex = ({ text }) => {
   useEffect(() => {
     if (window.MathJax && window.MathJax.typesetPromise) {
@@ -23,9 +49,7 @@ export const ParLatex = ({ text }) => {
   }, [text]);
 
   return (
-    <p className="text-base leading-relaxed text-slate-700 text-justify mt-4">
-      {text}
-    </p>
+    <p className="leading-relaxed text-slate-700 text-justify mt-4">{text}</p>
   );
 };
 
