@@ -4,6 +4,7 @@ import NotFound from './pages/NotFound';
 import Petunjuk from './pages/Petunjuk';
 import Home from './pages/Home';
 import Volume from './pages/Volume';
+import Volume2 from './pages/Volume2';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/petunjuk" element={<Petunjuk />} />
         <Route path="/home" element={<Home />} />
         <Route path="/volume" element={<Volume />} />
+        <Route path="/volume-2" element={<Volume2 />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

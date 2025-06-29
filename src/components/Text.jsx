@@ -23,7 +23,7 @@ export const ParLatex = ({ text }) => {
   }, [text]);
 
   return (
-    <p className="text-base leading-relaxed text-slate-700 text-justify">
+    <p className="text-base leading-relaxed text-slate-700 text-justify mt-4">
       {text}
     </p>
   );
