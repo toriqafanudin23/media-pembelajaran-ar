@@ -4,6 +4,8 @@ import InputSubmit from '../components/InputSubmit';
 import Navigasi from '../components/Navigasi';
 import { ParLatex } from '../components/Text';
 import NavFooter from '../components/NavFooter';
+import SoalSimpel from '../components/SoalSimpel';
+import { Satuan } from '../components/Satuan';
 
 const Volume2 = () => {
   return (
@@ -48,6 +50,34 @@ const Volume2 = () => {
         <InputSubmit answerKey="12" />
         <Par text="Jumlah sisi:" />
         <InputSubmit answerKey="6" />
+        <Par text="Kita telah mempelajari bahwa volume kubus dan balok dapat dihitung dengan rumus:" />
+        <ParLatex text={<>$$V = p \times l \times t$$</>} />
+        <Par text="Sebagai latihan, hitunglah volume balok berikut!" />
+
+        <SoalSimpel
+          no="1"
+          soal="soal-latihan-satu.png"
+          answerKey="120"
+          satuan={
+            <>
+              <Satuan text="4 cm" positionClass="absolute top-38 right-12" />
+              <Satuan text="6 cm" positionClass="absolute top-46 right-40" />
+              <Satuan text="5 cm" positionClass="absolute top-18 right-5" />
+            </>
+          }
+        />
+        <SoalSimpel
+          no="2"
+          soal="soal-latihan-dua.png"
+          answerKey="25"
+          satuan={
+            <>
+              <Satuan text="2,5 cm" positionClass="absolute top-70 right-12" />
+              <Satuan text="2 cm" positionClass="absolute top-77 right-40" />
+              <Satuan text="5 cm" positionClass="absolute top-25 right-4" />
+            </>
+          }
+        />
       </div>
       <NavFooter prev="/volume" next="/volume-3" />
     </>
