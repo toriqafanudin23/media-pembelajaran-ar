@@ -4,6 +4,7 @@ import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
 import Simulasi from '../components/SimulasiAR';
 import { Ha1, Ha2, Par, ParLatex } from '../components/Text';
+import SimulasiARjs from '../components/SimulasiARjs';
 
 const Volume = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
@@ -28,6 +29,11 @@ const Volume = () => {
             model3D={urlAnim + 'kubus-warna-2-anim.glb'}
             scale={0.8}
             nama="Objek 1. Volume Kubus"
+          />
+          <SimulasiARjs
+            model3D="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/animasi/kubus-warna-2-anim.glb"
+            scale={[0.8, 0.8, 0.8]}
+            nama="Kubus Warna"
           />
 
           <Par text="Setelah menghitung dengan bantuan Augmented Reality, jumlah kubus satuan penyusun Rubik adalah 9. Selanjutnya, tanpa bantuan animasi, hitunglah jumlah kubus satuan pada Objek 2 berikut!" />
