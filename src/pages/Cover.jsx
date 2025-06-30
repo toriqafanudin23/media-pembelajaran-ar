@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Model = () => {
   const gltf = useGLTF(
-    'https://bxehantrfbyenzvyrfoc.supabase.co/storage/v1/object/public/files//jaring-kubus-1.glb'
+    'https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/animasi/jaring-kubus-warna-3.glb'
   );
 
   const mixer = useRef();
@@ -26,7 +26,7 @@ const Model = () => {
     mixer.current?.update(delta);
   });
 
-  return <primitive object={gltf.scene} scale={0.4} position={[0, -1, 0]} />;
+  return <primitive object={gltf.scene} scale={2} position={[0, -1, 0]} />;
 };
 
 const Cover = () => {
@@ -47,7 +47,7 @@ const Cover = () => {
 
       {/* Canvas Model 3D */}
       <div className="w-full h-[300px] border-2 border-slate-500 rounded-xl">
-        <Canvas camera={{ position: [0, 0, 3] }}>
+        <Canvas camera={{ position: [6, 6, 6] }}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[2, 2, 2]} intensity={2} />
           <OrbitControls />

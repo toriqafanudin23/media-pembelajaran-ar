@@ -24,7 +24,7 @@ const Volume = () => {
           <Par text="Untuk membantumu menghitung banyaknya kubus satuan penyusun Rubik pada Gambar 1, perhatikan simulasi berikut." />
 
           <Simulasi
-            urlAR="https://mywebar.com/p/Project_1_w7y625xuc5"
+            urlAR="https://mywebar.com/p/objek1volumekubus"
             model3D={urlAnim + 'kubus-warna-2-anim.glb'}
             scale={0.8}
             nama="Objek 1. Volume Kubus"

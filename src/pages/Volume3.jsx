@@ -1,6 +1,6 @@
 import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
-import { Ha2, ParSoal, ParLatex } from '../components/Text';
+import { Ha2, ParSoal } from '../components/Text';
 
 const Volume3 = () => {
   return (
@@ -37,6 +37,8 @@ const Volume3 = () => {
           text2="Jadi, tinggi balok tersebut adalah 4 cm."
         />
         <ParSoal
+          imgAktif={true}
+          src="latihan-pembahasan-4.png"
           no="3."
           text="Diketahui perbandingan panjang, lebar, dan tinggi sebuah balok adalah $$p:l:t=2:3:5$$Jika Volume balok adalah 810 cm<sup>3</sup>, maka panjang balok tersebut adalah ... cm."
           latex={
@@ -74,7 +76,7 @@ const Volume3 = () => {
           text2="Jadi, selisih volume kedua kubus tersebut adalah 513 cm³."
         />
       </div>
-      <NavFooter prev="/volume-2" next="/volume-4" />
+      <NavFooter prev="/volume-2" next="/volume-prisma" />
     </>
   );
 };

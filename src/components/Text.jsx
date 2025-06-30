@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Image from './Image';
 
 export const Par = ({ text = '' }) => {
   useEffect(() => {
@@ -9,13 +10,22 @@ export const Par = ({ text = '' }) => {
 
   return (
     <p
-      className="text-base leading-relaxed text-slate-700 text-justify mt-4 inte"
+      className="text-base leading-relaxed text-slate-700 text-justify mt-3 inte"
       dangerouslySetInnerHTML={{ __html: text }}
     ></p>
   );
 };
 
-export const ParSoal = ({ text = '', no = '', latex, text2 = '' }) => {
+export const ParSoal = ({
+  text = '',
+  no = '',
+  latex,
+  text2 = '',
+  src,
+  nama,
+  width,
+  imgAktif = false,
+}) => {
   useEffect(() => {
     if (window.MathJax?.typesetPromise) {
       window.MathJax.typesetPromise();
@@ -30,6 +40,7 @@ export const ParSoal = ({ text = '', no = '', latex, text2 = '' }) => {
           className="text-base leading-relaxed text-slate-700 text-justify"
           dangerouslySetInnerHTML={{ __html: text }}
         />
+        {imgAktif && <Image src={src} nama={nama} width={width} />}
         <p>Pembahasan:</p>
         <ParLatex text={latex} />
         <p
@@ -49,7 +60,9 @@ export const ParLatex = ({ text }) => {
   }, [text]);
 
   return (
-    <p className="leading-relaxed text-slate-700 text-justify mt-4">{text}</p>
+    <p className="leading-relaxed text-slate-700 text-justify mt-4 text-sm">
+      {text}
+    </p>
   );
 };
 
@@ -62,5 +75,5 @@ export const Ha1 = ({ text }) => {
 };
 
 export const Ha2 = ({ text }) => {
-  return <h2 className="text-2xl font-semibold text-slate-700 mb-2">{text}</h2>;
+  return <h2 className="text-2xl font-semibold text-slate-700 mt-4">{text}</h2>;
 };

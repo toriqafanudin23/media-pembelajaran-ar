@@ -2,10 +2,7 @@ const Image = ({ src, nama, width = '250px' }) => {
   const urlImage = import.meta.env.VITE_URL_IMAGE;
 
   return (
-    <div
-      className="mx-auto mt-4 rounded-xl overflow-hidden shadow"
-      style={{ width: width }}
-    >
+    <div className="mx-auto mt-4 overflow-hidden" style={{ width: width }}>
       <img
         src={urlImage + src}
         alt={nama || 'Gambar'}
