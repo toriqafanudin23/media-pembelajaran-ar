@@ -44,8 +44,9 @@ const VolumePrisma = () => {
         <Par text="<b>Sebagai contoh</b>, diketahui sebuah prisma ABC.DEF dengan alas berbentuk segitiga siku-siku dan \( \angle \)ABC \(= 90^\circ \). Panjang sisi-sisi alasnya adalah AB = 4 cm, BC = 3 cm, dan AC = 5 cm. Jika tinggi prisma adalah 6 cm, maka berapakah volume prisma tersebut?" />
 
         <Image
-          src="prisma-segitiga-siku.png"
+          src="prisma-segitiga-siku-2.png"
           nama="Gambar 9. Prisma segitiga siku-siku"
+          width="350px"
         />
 
         <Par text="Pembahasan:" />
@@ -66,12 +67,17 @@ const VolumePrisma = () => {
 
         <Par text="Jadi, volume prisma ABC.DEF adalah 36 \(\text{ cm}^3 \)." />
         <Par text="<b>Sebagai latihan</b>, carilah volume prisma dengan alas berbentuk trapesium berikut! Tinggi trapesium adalah 2 cm." />
-        <Image src="prisma-trapesium.png" nama="Gambar 10. Prisma trapesium" />
+        <Image
+          src="prisma-trapesium-3.png"
+          nama="Gambar 10. Prisma trapesium"
+          width="330px"
+          scale={1.2}
+        />
         <div className="flex mx-auto w-full pl-4">
           <InputSubmitSatuan answerKey="42" />
         </div>
       </div>
-      <NavFooter prev="/volume-3" next="/volume-prisma-2" />
+      <NavFooter prev="/volume-3" next="/volume-limas" />
     </>
   );
 };

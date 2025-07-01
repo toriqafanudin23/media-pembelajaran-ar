@@ -4,7 +4,6 @@ import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
 import Simulasi from '../components/SimulasiAR';
 import { Ha1, Ha2, Par, ParLatex } from '../components/Text';
-import SimulasiARjs from '../components/SimulasiARjs';
 
 const Volume = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
@@ -30,11 +29,6 @@ const Volume = () => {
             scale={0.8}
             nama="Objek 1. Volume Kubus"
           />
-          <SimulasiARjs
-            model3D="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/animasi/kubus-warna-2-anim.glb"
-            scale={[0.8, 0.8, 0.8]}
-            nama="Kubus Warna"
-          />
 
           <Par text="Setelah menghitung dengan bantuan Augmented Reality, jumlah kubus satuan penyusun Rubik adalah 9. Selanjutnya, tanpa bantuan animasi, hitunglah jumlah kubus satuan pada Objek 2 berikut!" />
           <InputSubmit answerKey="8" />
@@ -48,16 +42,16 @@ const Volume = () => {
 
           <Par text="Setelah kamu berhasil menghitung jumlah kubus dengan bantuan animasi, sekarang coba hitung jumlah kubus satuan penyusun kubus pada Gambar 2." />
           <InputSubmit answerKey="64" />
-          <Image src="kubus4x4.png" nama="Gambar 2. Kubus" />
+          <Image src="4x4x4.png" nama="Gambar 2. Kubus" />
           <Par text="Dari perhitungan yang telah kamu lakukan, dapat disimpulkan bahwa kubus yang tersusun dari 27 kubus satuan memiliki volume sebesar 27 satuan kubik. Sementara itu, kubus yang tersusun dari 64 kubus satuan memiliki volume sebesar 64 satuan kubik." />
           <Par text="Sebelumnya, kamu telah menggunakan satuan kubik untuk menyatakan volume. Sekarang, bagaimana jika kubus satuan penyusun kubus memiliki panjang rusuk 1 cm, seperti yang terlihat pada Gambar 3." />
-          <Image src="kubus1cm.png" nama="Gambar 3. Kubus" />
+          <Image src="1cm3.png" nama="Gambar 3. Kubus" />
           <Par text="Pada gambar 3, kubus memiliki volume 1 cm<sup>3</sup>. Sedangkan pada gambar 4, kubus memiliki volume 8 cm<sup>3</sup>." />
-          <Image src="kubus2x2.png" nama="Gambar 4. Kubus" />
+          <Image src="2cm.png" nama="Gambar 4. Kubus" />
           <Par text="Ukuran rusuk kubus satuan tidak harus 1 cm; bisa juga 1 dm, 1 m, 1 mm, ataupun ukuran lainnya." />
 
           <Par text="Terdapat cara yang lebih mudah untuk menghitung volume kubus tanpa harus menghitung satu per satu kubus satuannya, yaitu dengan mengalikan banyaknya kubus satuan penyusun rusuk panjang, rusuk lebar, dan rusuk tinggi." />
-          <Image src="kubusplt.png" nama="Gambar 5. Kubus" width="250px" />
+          <Image src="4x4plt.png" nama="Gambar 5. Kubus" width="250px" />
           <div className="mt-4">
             <ParLatex
               text={
@@ -99,7 +93,7 @@ const Volume = () => {
         />
         <ParLatex text={<>$$V = r \times r \times r$$</>} />
         <ParLatex text={<>$$V = r^3$$</>} />
-        <Image src="kubusr.png" nama="Gambar 6. Kubus" width="150px" />
+        <Image src="4x4rrr.png" nama="Gambar 6. Kubus" width="250px" />
       </div>
       <NavFooter prev="/home" next="/volume-2" />
     </>

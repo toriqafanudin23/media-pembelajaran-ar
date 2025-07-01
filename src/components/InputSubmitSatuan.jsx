@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const InputSubmitSatuan = ({ answerKey }) => {
+const InputSubmitSatuan = ({ answerKey, satuan = 'text{cm}^3' }) => {
   const [inputValue, setInputValue] = useState('');
   const [status, setStatus] = useState(null);
 
@@ -41,7 +41,7 @@ const InputSubmitSatuan = ({ answerKey }) => {
               placeholder="Jawab..."
             />
             <span className="px-2 py-2 text-slate-600 border-l border-slate-400">
-              {'\\( \\text{cm}^3 \\)'}
+              {`\\( \\${satuan} \\)`}
             </span>
           </div>
           <button

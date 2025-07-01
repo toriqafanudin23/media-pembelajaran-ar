@@ -24,7 +24,7 @@ const Home = () => {
           title="Luas Permukaan"
           icon={urlImage + 'icon-jaring.png'}
           deskripsi="Pahami konsep luas permukaan dengan bantuan visualisasi."
-          to="/luas"
+          to="/luas-permukaan"
           dark
         />
         <CardMenu

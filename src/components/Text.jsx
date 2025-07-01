@@ -35,7 +35,7 @@ export const ParSoal = ({
   return (
     <div className="flex flex-row mt-4">
       <p className="mr-2 text-slate-700 w-6">{no}</p>
-      <div>
+      <div className="w-full">
         <p
           className="text-base leading-relaxed text-slate-700 text-justify"
           dangerouslySetInnerHTML={{ __html: text }}

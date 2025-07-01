@@ -38,7 +38,8 @@ const Volume3 = () => {
         />
         <ParSoal
           imgAktif={true}
-          src="latihan-pembahasan-4.png"
+          width="330px"
+          src="balok-xxx-3.png"
           no="3."
           text="Diketahui perbandingan panjang, lebar, dan tinggi sebuah balok adalah $$p:l:t=2:3:5$$Jika Volume balok adalah 810 cm<sup>3</sup>, maka panjang balok tersebut adalah ... cm."
           latex={
