@@ -38,14 +38,12 @@ const LuasPermukaan = () => {
           {/* Tombol satu-satunya untuk berganti model */}
           <button
             onClick={handleNextModel}
-            className="
-    absolute top-4 right-4 z-10
-    bg-white/70 backdrop-blur
-    border border-teal-300
-    p-2 rounded-md shadow-md
-    hover:scale-105 hover:bg-white
-    hover:border-gray-400 hover:shadow-lg transition
-  "
+            className="absolute top-4 right-4 z-10
+          bg-white/70 backdrop-blur
+            border border-teal-300
+            p-2 rounded-md shadow-md
+            hover:scale-105 hover:bg-white
+          hover:border-gray-400 hover:shadow-lg transition"
           >
             <img
               src={urlIcon + 'next.png'}
@@ -68,7 +66,7 @@ const LuasPermukaan = () => {
         <Image src="jaring-kubus-2.png" />
         <Image src="jaring-kubus-3.png" />
         <Image
-          src="jaring-kubus-3.png"
+          src="jaring-kubus-4.png"
           nama="Gambar 13. Macam jaring-jaring kubus"
         />
 
