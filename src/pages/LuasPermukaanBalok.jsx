@@ -57,7 +57,7 @@ const LuasPermukaanBalok = () => {
         <Par text="Setelah kamu melihat contoh jaring-jaring balok, kita akan menganalisis salah satu jaring-jaring balok untuk mempelajari cara menghitung luas jaring-jaring atau luas permukaan balok." />
         <Image
           src="jaring-balok-L1-6-ukuran.png"
-          nama="Gambar 16. Jaring-jaring balok"
+          nama="Gambar 17. Jaring-jaring balok"
           scale={1.2}
           width="300px"
         />
@@ -82,12 +82,7 @@ const LuasPermukaanBalok = () => {
   $$L = 2 (p \times l + t \times l + p \times t).$$"
         />
         <Par text="Sekarang coba kamu gunakan rumus yang telah didapat, untuk menghitung luas permukaan balok berikut!" />
-        <Image
-          src="balok-8x5x4.png"
-          nama="Gambar 17. Balok"
-          scale={1}
-          width="300px"
-        />
+        <Image src="balok-8x5x4.png" scale={1} width="300px" />
         <InputSubmitSatuan answerKey="184" satuan="text{cm}^2" />
       </div>
       <NavFooter prev="/luas-permukaan" next="/latihan-soal-luas-permukaan" />

@@ -15,7 +15,6 @@ const VolumeLimas = () => {
         <Ha2 text="D. Volume Limas" />
         <Par text="Sebelumnya, kita telah mempelajari cara mencari volume bangun ruang yang memiliki bentuk alas dan tutup yang sama, seperti kubus, balok, dan prisma. Sekarang, bagaimana jika bentuk bangun ruangnya seperti berikut?" />
         <SimulasiStatis
-          urlAR="https://mywebar.com/p/Project_1_w7y625xuc5"
           model3D={urlAnim + 'limas-segitiga.glb'}
           models={[
             'limas-segitiga.glb',
@@ -32,13 +31,13 @@ const VolumeLimas = () => {
         <Par text="Untuk memahami cara menghitung volume limas, perhatikan simulasi berikut" />
         <Simulasi
           urlAR="https://mywebar.com/p/objek5volumelimas"
-          model3D={urlAnim + 'volume-limas-4.glb'}
+          model3D={urlAnim + 'volume-limas-scene.glb'}
           scale={1.5}
           nama="Objek 5. Volume limas"
         />
         <Image
           src="bukti-v-limas.png"
-          nama="Gambar 11. Limas"
+          nama="Gambar 12. Limas bagian kubus"
           width="330px"
           scale={1.2}
         />

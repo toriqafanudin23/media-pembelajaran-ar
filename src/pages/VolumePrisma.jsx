@@ -12,7 +12,10 @@ const VolumePrisma = () => {
       <div className="min-h-screen bg-white px-6 py-16 mb-4 inter-primary text-slate-800 sm:max-w-xl mx-auto">
         <Navigasi />
         <Ha2 text="C. Volume Prisma" />
-        <Par text="Sebelumnya kamu sudah belajar cara menghitung volume kubus dan balok. Volume kubus dan balok dapat diartikan sebagai banyaknya kubus satuan yang menyusunnya. Nah, sekarang bagaimana jika bentuk bangun yang ingin kamu hitung volumenya seperti berikut ini?" />
+        <Par
+          text="Sebelumnya kamu sudah belajar cara menghitung volume kubus dan balok. Volume kubus dan balok dapat diartikan sebagai banyaknya kubus satuan yang menyusunnya, dan bisa dihitung dengan
+        $$V= p \times l \times t.$$Nah, sekarang bagaimana jika bentuk bangun yang ingin kamu hitung volumenya seperti berikut ini?"
+        />
 
         <SimulasiStatis
           urlAR="https://mywebar.com/p/objek3jenisjenisprisma"
@@ -26,6 +29,13 @@ const VolumePrisma = () => {
           nama="Objek 3. Jenis-jenis Prisma"
           buttonSwitch={false}
         />
+        <Image src="prisma-sikusiku.png" scale={1.5} />
+        <Image
+          src="prisma-segilima-2.png"
+          scale={1.5}
+          nama="Gambar 9. Contoh prisma"
+        />
+
         <Par text="Bangun di atas disebut prisma. Prisma memiliki alas yang bentuknya beragam, misalnya segitiga, segiempat, segilima, atau bentuk lainnya. Pada prisma, kita tidak bisa lagi menggunakan definisi volume seperti saat menghitung volume kubus satuan, karena prisma tidak dapat sepenuhnya diisi oleh kubus satuan secara sempurna." />
 
         <Par text="Oleh karena itu, kita perlu menggunakan definisi volume yang lain. Perhatikan ilustrasi berikut. Volume kubus dapat dihitung dengan:" />
@@ -46,7 +56,7 @@ const VolumePrisma = () => {
 
         <Image
           src="prisma-segitiga-siku-2.png"
-          nama="Gambar 9. Prisma segitiga siku-siku"
+          nama="Gambar 10. Prisma segitiga siku-siku"
           width="350px"
         />
 
@@ -70,7 +80,7 @@ const VolumePrisma = () => {
         <Par text="<b>Sebagai latihan</b>, carilah volume prisma dengan alas berbentuk trapesium berikut! Tinggi trapesium adalah 2 cm." />
         <Image
           src="prisma-trapesium-3.png"
-          nama="Gambar 10. Prisma trapesium"
+          nama="Gambar 11. Prisma trapesium"
           width="330px"
           scale={1.2}
         />

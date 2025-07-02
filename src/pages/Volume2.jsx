@@ -12,14 +12,14 @@ const Volume2 = () => {
         <Navigasi />
 
         <Ha2 text="B. Volume Balok" />
-        <Par text="Menurutmu, apa perbedaan antara kubus dan balok? Untuk mengetahui perbedaannya, perhatikan Gambar 7 berikut." />
+        <Par text="Menurutmu, apakah perbedaan antara kubus dan balok? Untuk mengetahui perbedaannya, perhatikan Gambar 7 berikut." />
         <Image
           src="kubusbalokAB.png"
           nama="Gambar 7. Kubus dan Balok"
           scale={1.03}
         />
 
-        <Par text="Dapat dilihat bahwa pada bangun A, jumlah kubus satuan yang menyusun rusuk panjang, lebar, dan tinggi sama. Sementara pada bangun B, jumlah kubus satuan penyusun rusuk panjang, lebar, dan tinggi tidak sama. Bangun A disebut kubus, sedangkan bangun B disebut balok. Sekarang, coba hitung volume bangun B!" />
+        <Par text="Dapat dilihat bahwa pada bangun A, jumlah kubus satuan yang menyusun rusuk panjang, lebar, dan tinggi sama. Sementara pada bangun B, jumlah kubus satuan penyusun rusuk panjang, lebar, dan tinggi tidak sama. Bangun A disebut kubus, sedangkan bangun B disebut balok. Sekarang, coba kamu hitung volume bangun B!" />
         <InputSubmit answerKey="24" />
         <Par text="Dalam matematika, bangun ruang tidak selalu digambarkan dengan kubus satuan penyusunnya. Namun, untuk mempermudah perhitungan, bangun ruang sering hanya digambarkan sebagai kerangka dan sisi-sisinya saja, seperti terlihat pada Gambar 8 berikut." />
         <Image
