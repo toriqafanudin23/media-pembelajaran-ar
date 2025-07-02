@@ -1,7 +1,11 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigasi from '../components/Navigasi';
 
 const Petunjuk = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-white px-6 py-18 text-slate-800 inter-primary">
       <Navigasi />

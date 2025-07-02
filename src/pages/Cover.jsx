@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Model = () => {
   const gltf = useGLTF(
-    'https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/animasi/jaring-kubus-warna-3.glb'
+    'https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/animasi/animasi-jaring-kubus-2.glb'
   );
 
   const mixer = useRef();
@@ -30,6 +30,9 @@ const Model = () => {
 };
 
 const Cover = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-slate-100 text-slate-800 px-6 md:px-20 py-10 inter-primary">
       <header className="mb-10">

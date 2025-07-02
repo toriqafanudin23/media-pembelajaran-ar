@@ -1,9 +1,15 @@
+import { useEffect } from 'react';
 import CardMenu from '../components/CardMenu';
+import Navigasi from '../components/Navigasi';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const urlImage = import.meta.env.VITE_URL_ICON;
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 p-6 inter-primary flex items-center justify-center flex-col text-white">
+      <Navigasi />
       {/* Header */}
       <header className="mb-8 text-center">
         <h1 className="text-4xl font-extrabold mb-2 text-teal-400">

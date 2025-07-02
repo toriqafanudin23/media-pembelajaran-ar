@@ -10,6 +10,8 @@ import VolumePrisma from './pages/VolumePrisma';
 import VolumeLimas from './pages/VolumeLimas';
 import LuasPermukaan from './pages/LuasPermukaan';
 import LuasPermukaanBalok from './pages/LuasPermukaanBalok';
+import LatihanSoalLP from './pages/SoalLuasPermukaan';
+import LuasPermukaanPrisma from './components/LuasPermukaanPrisma';
 
 function App() {
   return (
@@ -25,6 +27,14 @@ function App() {
         <Route path="/volume-limas" element={<VolumeLimas />} />
         <Route path="/luas-permukaan" element={<LuasPermukaan />} />
         <Route path="/luas-permukaan-balok" element={<LuasPermukaanBalok />} />
+        <Route
+          path="/latihan-soal-luas-permukaan"
+          element={<LatihanSoalLP />}
+        />
+        <Route
+          path="/luas-permukaan-prisma"
+          element={<LuasPermukaanPrisma />}
+        />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

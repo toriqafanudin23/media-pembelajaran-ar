@@ -74,6 +74,8 @@ const Navigasi = ({ onNavigate }) => {
       {isOpen && (
         <div className="absolute top-12 left-0 w-full bg-slate-800 sm:hidden z-40 shadow-md">
           <ul className="flex flex-col text-white text-base">
+            <BarMobile title="Cover" to="/" />
+            <BarMobile title="Unduh Barcode" to="/petunjuk" />
             <BarMobile title="Home" to="/home" />
             <BarMobile title="Volume" to="/volume" />
             <BarMobile title="Luas Permukaan" to="/luas-permukaan" />

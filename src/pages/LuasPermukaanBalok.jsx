@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import InputSubmitSatuan from '../components/InputSubmitSatuan';
 import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
@@ -5,6 +6,9 @@ import { Ha2, Par } from '../components/Text';
 import Image from '../components/Image';
 
 const LuasPermukaanBalok = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="min-h-screen bg-white px-6 pt-18 mb-4 inter-primary text-slate-800 sm:w-xl mx-auto">
@@ -47,7 +51,7 @@ const LuasPermukaanBalok = () => {
         />
         <InputSubmitSatuan answerKey="184" satuan="text{cm}^2" />
       </div>
-      <NavFooter prev="luas-permukaan" next="/latihan-soal-luas-permukaan" />
+      <NavFooter prev="/luas-permukaan" next="/latihan-soal-luas-permukaan" />
     </>
   );
 };
