@@ -25,12 +25,13 @@ const VolumeLimas = () => {
           ]}
           scale={0.8}
           nama="Objek 4. Jenis-jenis Limas"
+          buttonSwitch={false}
         />
 
         <Par text="Bangun di atas disebut limas. Limas adalah bangun ruang yang memiliki alas berbentuk segi banyak dan satu titik puncak yang tidak terletak pada bidang alas." />
         <Par text="Untuk memahami cara menghitung volume limas, perhatikan simulasi berikut" />
         <Simulasi
-          urlAR="https://mywebar.com/p/Project_1_w7y625xuc5"
+          urlAR="https://mywebar.com/p/objek5volumelimas"
           model3D={urlAnim + 'volume-limas-4.glb'}
           scale={1.5}
           nama="Objek 5. Volume limas"

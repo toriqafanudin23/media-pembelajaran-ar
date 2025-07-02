@@ -31,7 +31,14 @@ const containerClass = `
 `;
 
 // ---------- SimulasiStatis Component ----------
-const SimulasiStatis = ({ urlAR, model3D, scale, nama, models }) => {
+const SimulasiStatis = ({
+  urlAR,
+  model3D,
+  scale,
+  nama,
+  models,
+  buttonSwitch = true,
+}) => {
   const baseUrl = import.meta.env.VITE_URL_ANIM;
   const [currentIndex, setCurrentIndex] = useState(
     models.findIndex((m) => model3D?.includes(m)) || 0
@@ -71,11 +78,11 @@ const SimulasiStatis = ({ urlAR, model3D, scale, nama, models }) => {
         ) : (
           <ModeAR urlAR={urlAR} />
         )}
-
-        {/* Button Switch Mode */}
-        <button
-          onClick={handleSwitch}
-          className="
+        (
+        {buttonSwitch && (
+          <button
+            onClick={handleSwitch}
+            className="
             absolute bottom-3 right-3
             bg-slate-800/60 backdrop-blur
             border border-teal-400/50
@@ -89,11 +96,11 @@ const SimulasiStatis = ({ urlAR, model3D, scale, nama, models }) => {
             transition
             z-10
           "
-        >
-          <img src={buttonIcon} alt="Switch Mode" className="w-8 h-8" />
-        </button>
-
-        {/* Button Next Model */}
+          >
+            <img src={buttonIcon} alt="Switch Mode" className="w-8 h-8" />
+          </button>
+        )}
+        )
         <button
           onClick={handleNextModel}
           className="

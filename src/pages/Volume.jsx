@@ -4,6 +4,7 @@ import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
 import Simulasi from '../components/SimulasiAR';
 import { Ha1, Ha2, Par, ParLatex } from '../components/Text';
+import { Images } from '../assets/assets';
 
 const Volume = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
@@ -16,7 +17,7 @@ const Volume = () => {
 
           <Ha2 text="A. Volume Kubus" />
 
-          <Image src="rubik2.png" nama="Gambar 1. Rubik" />
+          <Image src={Images[0].src} nama={Images[0].nama} />
 
           <Par text="Pernahkah kamu bermain rubik? Rubik merupakan permainan puzzle warna berbentuk kubus dengan ukuran tertentu. Jika kubus tersusun dari kubus satuan, maka berapakah banyaknya kubus satuan yang menyusun Rubik di atas?" />
           <InputSubmit answerKey="9" />
@@ -33,16 +34,17 @@ const Volume = () => {
           <Par text="Setelah menghitung dengan bantuan Augmented Reality, jumlah kubus satuan penyusun Rubik adalah 9. Selanjutnya, tanpa bantuan animasi, hitunglah jumlah kubus satuan pada Objek 2 berikut!" />
           <InputSubmit answerKey="8" />
           <Simulasi
-            urlAR="https://mywebar.com/p/Project_1_w7y625xuc5"
+            urlAR="https://mywebar.com/p/objek2kubus"
             model3D={urlAnim + 'kubus2x2.glb'}
             scale={1.2}
             nama="Objek 2. Kubus"
             buttonActive={false}
+            buttonSwitch={false}
           />
 
           <Par text="Setelah kamu berhasil menghitung jumlah kubus dengan bantuan animasi, sekarang coba hitung jumlah kubus satuan penyusun kubus pada Gambar 2." />
           <InputSubmit answerKey="64" />
-          <Image src="4x4x4.png" nama="Gambar 2. Kubus" />
+          <Image src={Images[1].src} nama={Images[1].nama} />
           <Par text="Dari perhitungan yang telah kamu lakukan, dapat disimpulkan bahwa kubus yang tersusun dari 27 kubus satuan memiliki volume sebesar 27 satuan kubik. Sementara itu, kubus yang tersusun dari 64 kubus satuan memiliki volume sebesar 64 satuan kubik." />
           <Par text="Sebelumnya, kamu telah menggunakan satuan kubik untuk menyatakan volume. Sekarang, bagaimana jika kubus satuan penyusun kubus memiliki panjang rusuk 1 cm, seperti yang terlihat pada Gambar 3." />
           <Image src="1cm3.png" nama="Gambar 3. Kubus" />

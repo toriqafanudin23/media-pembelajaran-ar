@@ -15,7 +15,7 @@ const VolumePrisma = () => {
         <Par text="Sebelumnya kamu sudah belajar cara menghitung volume kubus dan balok. Volume kubus dan balok dapat diartikan sebagai banyaknya kubus satuan yang menyusunnya. Nah, sekarang bagaimana jika bentuk bangun yang ingin kamu hitung volumenya seperti berikut ini?" />
 
         <SimulasiStatis
-          urlAR="https://mywebar.com/p/Project_1_w7y625xuc5"
+          urlAR="https://mywebar.com/p/objek3jenisjenisprisma"
           model3D={urlAnim + 'prisma-segitiga.glb'}
           models={[
             'prisma-segitiga.glb',
@@ -24,6 +24,7 @@ const VolumePrisma = () => {
           ]}
           scale={2.8}
           nama="Objek 3. Jenis-jenis Prisma"
+          buttonSwitch={false}
         />
         <Par text="Bangun di atas disebut prisma. Prisma memiliki alas yang bentuknya beragam, misalnya segitiga, segiempat, segilima, atau bentuk lainnya. Pada prisma, kita tidak bisa lagi menggunakan definisi volume seperti saat menghitung volume kubus satuan, karena prisma tidak dapat sepenuhnya diisi oleh kubus satuan secara sempurna." />
 

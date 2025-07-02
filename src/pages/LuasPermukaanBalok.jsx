@@ -48,7 +48,7 @@ const LuasPermukaanBalok = () => {
 
           {/* Komponen Simulasi */}
           <Simulasi
-            urlAR="https://mywebar.com/p/Project_1_w7y625xuc5"
+            urlAR="https://mywebar.com/p/objek7jaringjaringbalok"
             model3D={urlAnim + models[currentIndex]}
             scale={1}
             nama={`Objek 7. Jaring-jaring balok`}

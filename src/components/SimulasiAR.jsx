@@ -165,7 +165,14 @@ const ModeAR = ({ urlAR }) => {
 };
 
 // ---------- ViewerSwitcher Component ----------
-const Simulasi = ({ urlAR, model3D, scale, nama, buttonActive = true }) => {
+const Simulasi = ({
+  urlAR,
+  model3D,
+  scale,
+  nama,
+  buttonActive = true,
+  buttonSwitch = true,
+}) => {
   const [mode, setMode] = useState('3D');
 
   const handleSwitch = () => {
@@ -189,9 +196,10 @@ const Simulasi = ({ urlAR, model3D, scale, nama, buttonActive = true }) => {
         )}
 
         {/* Button Switch Mode */}
-        <button
-          onClick={handleSwitch}
-          className="
+        {buttonSwitch && (
+          <button
+            onClick={handleSwitch}
+            className="
             absolute bottom-3 right-3
             bg-slate-800/60 backdrop-blur
             border border-teal-400/50
@@ -205,9 +213,10 @@ const Simulasi = ({ urlAR, model3D, scale, nama, buttonActive = true }) => {
             transition
             z-10
           "
-        >
-          <img src={buttonIcon} alt="Switch Mode" className="w-8 h-8" />
-        </button>
+          >
+            <img src={buttonIcon} alt="Switch Mode" className="w-8 h-8" />
+          </button>
+        )}
       </div>
       <p className="text-center text-sm text-slate-600 font-bold mt-2">
         {nama}

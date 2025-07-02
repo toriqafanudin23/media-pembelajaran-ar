@@ -9,6 +9,7 @@ import Simulasi from '../components/SimulasiAR';
 const LuasPermukaan = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
   const urlIcon = import.meta.env.VITE_URL_ICON;
+  const [buttonGanti, setButtonGanti] = useState(true);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -35,26 +36,27 @@ const LuasPermukaan = () => {
         <Par text="Pernahkah kamu membongkar kardus atau menggunting kardus di bagian tepinya? Tentu, saat kecil hal ini lumrah dilakukan anak-anak saat bermain. Pernahkah kamu bertanya, bagaimana cara perusahaan menentukan luas minimal bahan untuk membuat kardus? Jika belum tahu, kamu akan mempelajarinya pada materi kali ini." />
         <Par text="Kali ini, kamu akan menggunakan teknologi augmented reality untuk melihat seperti apa bentuk kardus saat dibongkar, serta kemungkinan bentuk potongan yang terjadi. Kamu akan mulai dari kardus berbentuk kubus, yaitu yang memiliki enam sisi dengan luas yang sama." />
         <div className="relative">
-          {/* Tombol satu-satunya untuk berganti model */}
-          <button
-            onClick={handleNextModel}
-            className="absolute top-4 right-4 z-10
+          {buttonGanti && (
+            <button
+              onClick={handleNextModel}
+              className="absolute top-4 right-4 z-10
           bg-white/70 backdrop-blur
             border border-teal-300
             p-2 rounded-md shadow-md
             hover:scale-105 hover:bg-white
           hover:border-gray-400 hover:shadow-lg transition"
-          >
-            <img
-              src={urlIcon + 'next.png'}
-              alt="Next Model"
-              className="w-8 h-8"
-            />
-          </button>
+            >
+              <img
+                src={urlIcon + 'next.png'}
+                alt="Next Model"
+                className="w-8 h-8"
+              />
+            </button>
+          )}
 
           {/* Komponen Simulasi */}
           <Simulasi
-            urlAR="https://mywebar.com/p/Project_1_w7y625xuc5"
+            urlAR="https://mywebar.com/p/objek6jaringjaringkubus"
             model3D={urlAnim + models[currentIndex]}
             scale={1.4}
             nama={`Objek 6. Jaring-jaring kubus`}

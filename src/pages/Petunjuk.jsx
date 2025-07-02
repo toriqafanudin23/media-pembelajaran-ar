@@ -54,7 +54,7 @@ const Petunjuk = () => {
       {/* AR View langsung tampil */}
       <div className="w-full rounded-lg overflow-hidden border border-slate-300 shadow">
         <iframe
-          src="https://mywebar.com/p/Project_1_w7y625xuc5"
+          src="https://mywebar.com/p/objek6jaringjaringkubus"
           className="w-full h-[600px] border-none"
           allow="camera; gyroscope; accelerometer; magnetometer; xr-spatial-tracking; microphone"
           title="WebAR Viewer"
