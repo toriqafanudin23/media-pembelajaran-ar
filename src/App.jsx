@@ -11,7 +11,7 @@ import VolumeLimas from './pages/VolumeLimas';
 import LuasPermukaan from './pages/LuasPermukaan';
 import LuasPermukaanBalok from './pages/LuasPermukaanBalok';
 import LatihanSoalLP from './pages/SoalLuasPermukaan';
-import LuasPermukaanPrisma from './components/LuasPermukaanPrisma';
+import LuasPermukaanPrisma from './pages/LuasPermukaanPrisma';
 
 function App() {
   return (
