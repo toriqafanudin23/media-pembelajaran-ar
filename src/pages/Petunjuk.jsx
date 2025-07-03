@@ -41,7 +41,7 @@ const Petunjuk = () => {
         </div>
 
         <a
-          href="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/barcode/barcode-AR.pdf"
+          href="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/barcode/barcode-2.pdf"
           download
           className="text-sm font-medium text-teal-600 hover:text-teal-700 transition"
         >
