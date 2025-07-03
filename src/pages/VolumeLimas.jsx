@@ -52,7 +52,7 @@ const VolumeLimas = () => {
         <Par text="$$V= \frac{1}{3} \times 7 \times 7 \times 9 = 147$$" />
         <Par text="Jadi, volume limas tersebut adalah 147 \( \text{cm}^3\)." />
       </div>
-      <NavFooter prev="/volume-prisma" next="/something" />
+      <NavFooter prev="/volume-prisma" next="/home" />
     </>
   );
 };

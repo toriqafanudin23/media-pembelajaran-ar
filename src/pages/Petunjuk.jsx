@@ -52,6 +52,16 @@ const Petunjuk = () => {
       <p className="text-lg leading-relaxed mb-2">Coba AR sebelum belajar:</p>
 
       {/* AR View langsung tampil */}
+      <div className="flex items-center mb-4 space-x-3 max-w-xl mx-auto">
+        <img
+          src="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/icons/touch.png"
+          alt="Icon sentuh"
+          className="w-14 h-14"
+        />
+        <p className="text-teal-600 font-semibold text-base">
+          Sentuh objek untuk menjalankan animasi!
+        </p>
+      </div>
       <div className="w-full rounded-lg overflow-hidden border border-slate-300 shadow">
         <iframe
           src="https://mywebar.com/p/objek6jaringjaringkubus"

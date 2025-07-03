@@ -12,6 +12,7 @@ import LuasPermukaan from './pages/LuasPermukaan';
 import LuasPermukaanBalok from './pages/LuasPermukaanBalok';
 import LatihanSoalLP from './pages/SoalLuasPermukaan';
 import LuasPermukaanPrisma from './pages/LuasPermukaanPrisma';
+import LuasPermukaanLimas from './pages/LuasPermukaanLimas';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           path="/luas-permukaan-prisma"
           element={<LuasPermukaanPrisma />}
         />
+        <Route path="/luas-permukaan-limas" element={<LuasPermukaanLimas />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
