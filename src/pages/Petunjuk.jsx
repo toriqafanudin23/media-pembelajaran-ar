@@ -36,12 +36,12 @@ const Petunjuk = () => {
           </svg>
           <div>
             <p className="font-medium text-slate-800">barcode-ar.pdf</p>
-            <p className="text-sm text-slate-500">Ukuran file: 258 KB</p>
+            <p className="text-sm text-slate-500">Ukuran file: 373 KB</p>
           </div>
         </div>
 
         <a
-          href="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/barcode/barcode-2.pdf"
+          href="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/barcode/barcode-3.pdf"
           download
           className="text-sm font-medium text-teal-600 hover:text-teal-700 transition"
         >
