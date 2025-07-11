@@ -39,7 +39,7 @@ const Volume2 = () => {
         <Par text="Kita telah mempelajari bahwa volume kubus dan balok dapat dihitung dengan rumus:" />
         <ParLatex text={<>$$V = p \times l \times t$$</>} />
         <Par text="Sebagai latihan, hitunglah volume balok berikut!" />
-        <Image src="latihan-soal-balok-1.png" width="300px" />
+        <Image src="balok-6x4x5.png" width="300px" />
         <InputSubmit answerKey="120" />
       </div>
       <NavFooter prev="/volume" next="/volume-3" />

@@ -31,7 +31,7 @@ const Volume = () => {
             nama="Objek 1. Volume Kubus"
           />
           <Par text="Masukan jumlah kubus satuan:" />
-          <InputSubmit answerKey="9" />
+          <InputSubmit answerKey="27" />
 
           <Par text="Setelah menghitung dengan bantuan Augmented Reality, tentu kamu sudah tahu jumlah kubus satuan yang menyusun rubik. Selanjutnya, tanpa bantuan animasi, hitunglah jumlah kubus satuan pada Objek 2 berikut!" />
           <InputSubmit answerKey="8" />
@@ -72,8 +72,8 @@ const Volume = () => {
         />
         <Image src="4x4rrr.png" nama="Gambar 6. Kubus" width="250px" />
         <Par text="Sebagai latihan, hitunglah volume kubus berikut!" />
-        <Image src="kubus_9x9x9.png" scale={1.2} />
-        <InputSubmitSatuan />
+        <Image src="kubus-9x9x9x.png" scale={1.} />
+        <InputSubmitSatuan answerKey="729" />
       </div>
       <NavFooter prev="/home" next="/volume-2" />
     </>
