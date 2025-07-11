@@ -3,7 +3,7 @@ import InputSubmit from '../components/InputSubmit';
 import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
 import Simulasi from '../components/SimulasiAR';
-import { Ha1, Ha2, Par, ParLatex } from '../components/Text';
+import { Ha1, Ha2, Par } from '../components/Text';
 import { Images } from '../assets/assets';
 import InputSubmitSatuan from '../components/InputSubmitSatuan';
 

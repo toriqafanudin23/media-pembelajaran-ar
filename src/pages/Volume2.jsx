@@ -4,11 +4,12 @@ import InputSubmit from '../components/InputSubmit';
 import Navigasi from '../components/Navigasi';
 import { ParLatex } from '../components/Text';
 import NavFooter from '../components/NavFooter';
+import InputSubmitSatuan from '../components/InputSubmitSatuan'
 
 const Volume2 = () => {
   return (
     <>
-      <div className="min-h-screen bg-white px-6 pt-18 mb-4 inter-primary text-slate-800 mx-auto">
+      <div className="min-h-screen bg-white px-6 pt-18 mb-4 inter-primary text-slate-800 mx-auto sm:w-xl">
         <Navigasi />
 
         <Ha2 text="B. Volume Balok" />
@@ -40,7 +41,7 @@ const Volume2 = () => {
         <ParLatex text={<>$$V = p \times l \times t$$</>} />
         <Par text="Sebagai latihan, hitunglah volume balok berikut!" />
         <Image src="balok-6x4x5.png" width="300px" />
-        <InputSubmit answerKey="120" />
+        <InputSubmitSatuan answerKey="120" satuan='text{cm}^3' />
       </div>
       <NavFooter prev="/volume" next="/volume-3" />
     </>
