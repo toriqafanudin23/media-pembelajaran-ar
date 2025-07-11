@@ -10,7 +10,7 @@ export const Par = ({ text = '' }) => {
 
   return (
     <p
-      className="text-base leading-relaxed text-slate-700 text-justify mt-3 inte"
+      className="text-base leading-relaxed text-slate-700 text-justify mt-2 inte"
       dangerouslySetInnerHTML={{ __html: text }}
     ></p>
   );
@@ -76,4 +76,8 @@ export const Ha1 = ({ text }) => {
 
 export const Ha2 = ({ text }) => {
   return <h2 className="text-2xl font-semibold text-slate-700 mt-4">{text}</h2>;
+};
+
+export const Ha3 = ({ text }) => {
+  return <h2 className="text-xl font-semibold text-slate-500 mt-8">{text}</h2>;
 };

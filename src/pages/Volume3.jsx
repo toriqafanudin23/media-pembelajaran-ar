@@ -1,6 +1,6 @@
 import NavFooter from '../components/NavFooter';
 import Navigasi from '../components/Navigasi';
-import { Ha2, Par } from '../components/Text';
+import { Ha2,Ha3, Par } from '../components/Text';
 import Image from '../components/Image';
 import InputSubmitSatuan from '../components/InputSubmitSatuan';
 
@@ -10,13 +10,15 @@ const Volume3 = () => {
       <div className="min-h-screen bg-white px-6 py-16 mb-4 inter-primary text-slate-800 sm:max-w-xl mx-auto">
         <Navigasi />
         <Ha2 text="Latihan Soal dan Pembahasan" />
-        <Par text="<b>Soal 1</b><br />Diketahui sebuah bak mandi saat diukur dari luar, memiliki ukuran \( 50 \text{ cm} \times 100 \text{ cm} \times 60 \text{ cm}. \) Jika ketebalan dinding bak mandi adalah \( 10 \text{ cm} \), maka berapakah volume air yang dapat di tampung saat bak mandi terisi penuh?" />
+        <Ha3 text="Soal 1"/>
+        <Par text="Diketahui sebuah bak mandi saat diukur dari luar, memiliki ukuran \( 50 \text{ cm} \times 100 \text{ cm} \times 60 \text{ cm}. \) Jika ketebalan dinding bak mandi adalah \( 10 \text{ cm} \), maka berapakah volume air yang dapat di tampung saat bak mandi terisi penuh?" />
         <Image src="bak-mandi-2.png" width='300px' />
         <Par text="Pembahasan:<br />Jika diukur dari luar, bak mandi memiliki ukuran:<br />\( p = 100 \text{ cm} \)<br />\( l = 50 \text{ cm} \)<br />\( t = 60 \text{ cm} \)<br />Karena ketebalan dinding \( 10 \text{ cm} \), maka ukuran bagian dalam bak mandi menjadi:<br />\( p' = 100 - 2 \times 10 = 80 \text{ cm} \)<br />\( l' = 50 - 2 \times 10 = 30 \text{ cm} \)<br />\( t' = 60 \text{ cm} \)<br />Sehingga volume air yang dapat ditampung bisa dihitung dengan:<br />\( V = p' \times l' \times t' \)<br />Jadi volume air yang dapat ditampung adalah" />
 
         <InputSubmitSatuan answerKey='144' satuan='text{liter}' />
 
-        <Par text="<b>Soal 2</b><br />Andi sedang membangun rumah di pedesaan. Pada proses pembangunan, ia kekurangan batu bata sehingga memutuskan untuk membeli 100 batu bata. Ukuran batu bata \( 20 \text{ cm} \times 10 \text{ cm} \times 5 \text{ cm} \). Jika lahan untuk menyimpan batu bata yang dimiliki Andi adalah \( 1 \text{ m} \times 50 \text{ cm} \), berapa tinggi susunan batu bata agar dapat memenuhi lahan tersebut?" />
+        <Ha3 text="Soal 2" />
+        <Par text="Andi sedang membangun rumah di pedesaan. Pada proses pembangunan, ia kekurangan batu bata sehingga memutuskan untuk membeli 100 batu bata. Ukuran batu bata \( 20 \text{ cm} \times 10 \text{ cm} \times 5 \text{ cm} \). Jika lahan untuk menyimpan batu bata yang dimiliki Andi adalah \( 1 \text{ m} \times 50 \text{ cm} \), berapa tinggi susunan batu bata agar dapat memenuhi lahan tersebut?" />
         <Image src="menata-batako.png" width='300px' />
 
         <Par text="Pembahasan:<br />Luas lahan Andi adalah<br /> \( 100 \text{ cm} \times 50 \text{ cm} = 5.000 \text{ cm}^2 \).<br />Luas alas satu batu bata adalah \( 20 \times 10 = 200 \text{ cm}^2 \).<br />Dalam satu lapisan dapat disusun \( \frac{5.000}{200} = 25 \) batu bata.<br />Karena Andi memiliki 100 batu bata, maka diperlukan \( \frac{100}{25} = 4 \) lapisan.<br />Tinggi susunan batu bata adalah \( 4 \times 5 = 20 \text{ cm} \).<br />Jadi, tinggi susunan batu bata agar memenuhi lahan tersebut adalah \( 20 \text{ cm} \)." />
