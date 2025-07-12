@@ -30,7 +30,7 @@ const Navigasi = ({ onNavigate }) => {
           onNavigate(title);
           setIsOpen(false);
         }}
-        className="w-full block text-left px-6 py-3 hover:bg-slate-700 transition"
+        className="w-full block text-left px-6 py-3 hover:bg-slate-700 transition sm:max-w-xl"
       >
         {title}
       </Link>
@@ -46,7 +46,7 @@ const Navigasi = ({ onNavigate }) => {
         }`}
       >
         {/* Kanan: Toggle Menu Mobile */}
-        <div className="flex sm:hidden">
+        <div className="flex">
           <button
             aria-label="Open menu"
             onClick={() => setIsOpen((prev) => !prev)}
@@ -72,7 +72,7 @@ const Navigasi = ({ onNavigate }) => {
 
       {/* Dropdown menu mobile */}
       {isOpen && (
-        <div className="absolute top-12 left-0 w-full bg-slate-800 sm:hidden z-40 shadow-md">
+        <div className="absolute top-12 left-0 w-full bg-slate-800 z-40 shadow-md">
           <ul className="flex flex-col text-white text-base">
             <BarMobile title="Cover" to="/" />
             <BarMobile title="Unduh Barcode" to="/petunjuk" />

@@ -8,7 +8,7 @@ const Home = () => {
   }, []);
   const urlImage = import.meta.env.VITE_URL_ICON;
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 p-6 inter-primary flex items-center justify-center flex-col text-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 p-6 inter-primary flex items-center justify-center flex-col text-white sm:max-w-xl mx-auto">
       <Navigasi />
       {/* Header */}
       <header className="mb-8 text-center">

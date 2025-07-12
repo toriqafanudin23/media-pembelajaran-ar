@@ -7,7 +7,7 @@ const Petunjuk = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="min-h-screen bg-white px-6 py-18 text-slate-800 inter-primary">
+    <div className="min-h-screen bg-white px-6 py-18 text-slate-800 inter-primary sm:max-w-xl mx-auto">
       <Navigasi />
       <h1 className="text-2xl font-bold text-teal-500 tracking-wide pb-2">
         Petunjuk Penggunaan

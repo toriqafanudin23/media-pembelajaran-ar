@@ -4,7 +4,6 @@ import { Ha2, Par } from '../components/Text';
 import Simulasi from '../components/SimulasiAR';
 import Image from '../components/Image';
 import SimulasiStatis from '../components/SimulasiStatis';
-// import BanyakImage from '../components/BanyakImage';
 
 const VolumeLimas = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
@@ -52,7 +51,7 @@ const VolumeLimas = () => {
         <Par text="$$V= \frac{1}{3} \times 7 \times 7 \times 9 = 147$$" />
         <Par text="Jadi, volume limas tersebut adalah 147 \( \text{cm}^3\)." />
       </div>
-      <NavFooter prev="/volume-prisma" next="/home" />
+      <NavFooter prev="/volume-prisma" next="/soal-volume-prisma-limas" />
     </>
   );
 };

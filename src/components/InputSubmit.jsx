@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const InputSubmit = ({ answerKey }) => {
+const InputSubmit = ({ answerKey, placeholder = 'Ketik jawabanmu...' }) => {
   const [inputValue, setInputValue] = useState('');
   const [status, setStatus] = useState(null);
   const urlSound = import.meta.env.VITE_URL_SOUND;
@@ -29,7 +29,7 @@ const InputSubmit = ({ answerKey }) => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           className="flex-1 min-w-0 rounded-xl border-2 border-slate-600 bg-white text-gray-800 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500 placeholder:text-sm w-32"
-          placeholder="Ketik jawabanmu..."
+          placeholder={placeholder}
         />
         <button
           type="submit"

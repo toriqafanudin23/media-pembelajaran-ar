@@ -34,7 +34,7 @@ const Cover = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-slate-100 text-slate-800 px-6 md:px-20 py-10 inter-primary">
+    <div className="min-h-screen bg-gradient-to-b from-white to-slate-100 text-slate-800 px-6 md:px-20 py-10 inter-primary sm:max-w-xl mx-auto">
       <header className="mb-10">
         <h1 className="text-sm text-teal-500 font-semibold tracking-widest uppercase">
           Matematika SMP

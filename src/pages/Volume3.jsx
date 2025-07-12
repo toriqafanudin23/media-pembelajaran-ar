@@ -21,7 +21,7 @@ const Volume3 = () => {
         <Par text="Andi sedang membangun rumah di pedesaan. Pada proses pembangunan, ia kekurangan batu bata sehingga memutuskan untuk membeli 100 batu bata. Ukuran batu bata \( 20 \text{ cm} \times 10 \text{ cm} \times 5 \text{ cm} \). Jika lahan untuk menyimpan batu bata yang dimiliki Andi adalah \( 1 \text{ m} \times 50 \text{ cm} \), berapa tinggi susunan batu bata agar dapat memenuhi lahan tersebut?" />
         <Image src="menata-batako.png" width='300px' />
 
-        <Par text="Pembahasan:<br />Luas lahan Andi adalah<br /> \( 100 \text{ cm} \times 50 \text{ cm} = 5.000 \text{ cm}^2 \).<br />Luas alas satu batu bata adalah \( 20 \times 10 = 200 \text{ cm}^2 \).<br />Dalam satu lapisan dapat disusun \( \frac{5.000}{200} = 25 \) batu bata.<br />Karena Andi memiliki 100 batu bata, maka diperlukan \( \frac{100}{25} = 4 \) lapisan.<br />Tinggi susunan batu bata adalah \( 4 \times 5 = 20 \text{ cm} \).<br />Jadi, tinggi susunan batu bata agar memenuhi lahan tersebut adalah \( 20 \text{ cm} \)." />
+        <Par text="Pembahasan:<br />Luas lahan Andi adalah<br /> \( 100 \text{ cm} \times 50 \text{ cm} = 5.000 \text{ cm}^2 \).<br />Luas alas satu batu bata adalah \( 20 \times 10 = 200 \text{ cm}^2 \).<br />Dalam satu lapisan dapat disusun \( \frac{5.000}{200} = 25 \) batu bata.<br />Karena Andi memiliki 100 batu bata, maka diperlukan \( \frac{100}{25} = 4 \) lapisan.<br />Tinggi susunan batu bata adalah \( 4 \times 5 = 20 \text{ cm} \).<br />Jadi, tinggi susunan batu bata agar memenuhi lahan tersebut adalah 4 lapis atau \( 20 \text{ cm} \)." />
 
 
 
