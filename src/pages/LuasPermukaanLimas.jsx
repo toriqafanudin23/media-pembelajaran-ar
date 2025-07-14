@@ -1,9 +1,9 @@
-import NavFooter from '../components/NavFooter';
-import Navigasi from '../components/Navigasi';
-import { Ha2, Par } from '../components/Text';
-import Simulasi from '../components/SimulasiAR';
-import Image from '../components/Image';
-import InputSubmitSatuan from '../components/InputSubmitSatuan';
+import NavFooter from "../components/NavFooter";
+import Navigasi from "../components/Navigasi";
+import { Ha2, Par } from "../components/Text";
+import Simulasi from "../components/SimulasiAR";
+import Image from "../components/Image";
+import InputSubmitSatuan from "../components/InputSubmitSatuan";
 
 const LuasPermukaanLimas = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
@@ -15,7 +15,7 @@ const LuasPermukaanLimas = () => {
         <Par text="Sebelum memulai materi tentang luas permukaan limas, terlebih dahulu kita akan mengamati jaring-jaring limas dalam bentuk animasi." />
         <Simulasi
           urlAR="https://mywebar.com/p/objek7jaringjaringbalok"
-          model3D={urlAnim + 'animasi-jaring-limas.glb'}
+          model3D={urlAnim + "animasi-jaring-limas.glb"}
           scale={1}
           nama="Objek 9. Jaring-jaring limas"
           buttonSwitch={false}
@@ -28,12 +28,13 @@ const LuasPermukaanLimas = () => {
         />
         <Par
           text="Dari Gambar 19 terlihat bahwa limas memiliki alas berbentuk persegi dan empat buah sisi tegak berbentuk segitiga. Pada limas segi-\(n\) beraturan, luas permukaannya dapat dihitung dengan rumus
-  $$L = L_a + n \times L_t$$
-  \(L\) = luas permukaan limas  <br />
-  \(L_a\) = luas alas  <br />
-  \(L_t\) = luas satu sisi tegak  <br />
-  \(n\) = banyaknya sisi tegak"
+$$L = L_a + n \times L_t$$
+\(L\) = luas permukaan limas  <br />
+\(L_a\) = luas alas  <br />
+\(L_t\) = luas satu sisi tegak  <br />
+\(n\) = banyaknya sisi tegak"
         />
+
         <Par text="Sebagai contoh, diketahui limas \( T.ABCD \) memiliki alas berbentuk persegi. Jika panjang \( AD=4 \text{ cm}\) dan panjang \( PT=6 \text{ cm} \), hitunglah luas permukaan limas tersebut!" />
         <Image src="soal-lp-limas.png" scale={1} />
         <Par
@@ -44,7 +45,7 @@ const LuasPermukaanLimas = () => {
         />
         <InputSubmitSatuan answerKey="64" satuan="text{cm}^2" />
       </div>
-      <NavFooter prev="/luas-permukaan-prisma" next="/home" />
+      <NavFooter prev="/luas-permukaan-prisma" next="/soal-luas-prisma-limas" />
     </>
   );
 };

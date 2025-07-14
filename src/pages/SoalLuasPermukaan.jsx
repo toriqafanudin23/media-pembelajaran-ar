@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import Navigasi from '../components/Navigasi';
-import NavFooter from '../components/NavFooter';
-import { Ha2, Par } from '../components/Text';
-import Image from '../components/Image';
-import InputSubmitSatuan from '../components/InputSubmitSatuan';
+import { useEffect } from "react";
+import Navigasi from "../components/Navigasi";
+import NavFooter from "../components/NavFooter";
+import { Ha2, Par, Ha3 } from "../components/Text";
+import Image from "../components/Image";
+import InputSubmitSatuan from "../components/InputSubmitSatuan";
 
 const LatihanSoalLP = () => {
   useEffect(() => {
@@ -14,7 +14,17 @@ const LatihanSoalLP = () => {
       <div className="min-h-screen bg-white px-6 pt-18 mb-4 inter-primary text-slate-800 sm:w-xl mx-auto">
         <Navigasi />
         <Ha2 text="Latihan Soal" />
-        <div className="flex items-start gap-2 flex-row">
+        <Ha3 text="Soal 1" />
+        <Par text="Sebuah karton memiliki ukuran \( 0{,}5 \times 1 \text{ m} \) per lembarnya. Karton tersebut akan digunakan untuk membuat kotak kado berukuran \( 10 \times 12 \times 20 \text{ cm} \). Jika jumlah kotak kado yang akan dibuat adalah 200 buah, berapakah jumlah minimal lembar karton yang dibutuhkan?" />
+
+        <Ha3 text="Soal 2" />
+        <Par text="Sebuah aula berbentuk balok dengan ukuran panjang 9 meter, lebar 7 meter, dan tinggi 4 meter. Aula tersebut akan dicat warna biru pada bagian dinding dalamnya. Jika biaya cat per meter persegi adalah Rp20.000, berapakah biaya keseluruhan pengecatan?" />
+
+        <Ha3 text="Soal 3" />
+        <Par text="Perhatikan gambar kubus di bawah ini!" />
+        <Par text="Jika sisi atas dan sisi bawah kubus tersebut dicat dengan warna merah, sedangkan sisi-sisi lainnya dicat dengan warna biru, kemudian kubus dipotong menjadi 64 kubus satuan, tentukan banyaknya kubus satuan yang memiliki warna biru saja!" />
+
+        {/* <div className="flex items-start gap-2 flex-row">
           <span className="pt-3">1.</span>
           <div>
             <Par text="Diketahui sebuah balok \( PQRS.TUVW \) dengan panjang diagonal \( PR = 5\,\text{cm} \), panjang rusuk \( PQ = 4\,\text{cm} \), dan panjang rusuk \( QU = 2\,\text{cm} \). Tentukan luas permukaan balok tersebut!" />
@@ -62,7 +72,7 @@ const LatihanSoalLP = () => {
             <Par text="Sebuah balok memiliki panjang \(p\), lebar \(l\), dan tinggi \(t\) dengan \(p = 2l\) dan \(t = \frac{1}{2}p\). Jika luas permukaan balok tersebut adalah \(250 \text{ cm}^2\), tentukan panjang \(p\)!" />
             <InputSubmitSatuan answerKey="10" satuan="text{cm}" />
           </div>
-        </div>
+        </div> */}
       </div>
       <NavFooter prev="/luas-permukaan-balok" next="/luas-permukaan-prisma" />
     </>
