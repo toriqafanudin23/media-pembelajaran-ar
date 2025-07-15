@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import Navigasi from "../components/Navigasi";
 import NavFooter from "../components/NavFooter";
 import { Ha2, Par, Ha3 } from "../components/Text";
+import Simulasi from "../components/SimulasiAR"
 import Image from "../components/Image";
 import InputSubmitSatuan from "../components/InputSubmitSatuan";
 
 const LatihanSoalLP = () => {
+  const urlAnim = import.meta.env.VITE_URL_ANIM;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,14 +17,25 @@ const LatihanSoalLP = () => {
         <Navigasi />
         <Ha2 text="Latihan Soal" />
         <Ha3 text="Soal 1" />
-        <Par text="Sebuah karton memiliki ukuran \( 0{,}5 \times 1 \text{ m} \) per lembarnya. Karton tersebut akan digunakan untuk membuat kotak kado berukuran \( 10 \times 12 \times 20 \text{ cm} \). Jika jumlah kotak kado yang akan dibuat adalah 200 buah, berapakah jumlah minimal lembar karton yang dibutuhkan?" />
+        <Par text="Sebuah karton memiliki ukuran \( 65 \times 65 \text{ cm} \) per lembarnya. Karton tersebut akan digunakan untuk membuat kotak kado berukuran \( 10 \times 12 \times 20 \text{ cm} \). Jika jumlah kotak kado yang akan dibuat adalah 200 buah, berapakah jumlah minimal lembar karton yang dibutuhkan?" />
+        <Image src="jaring-64x64.png" scale={0.8} />
+        <InputSubmitSatuan answerKey="100" satuan="text{lembar}" />
 
         <Ha3 text="Soal 2" />
         <Par text="Sebuah aula berbentuk balok dengan ukuran panjang 9 meter, lebar 7 meter, dan tinggi 4 meter. Aula tersebut akan dicat warna biru pada bagian dinding dalamnya. Jika biaya cat per meter persegi adalah Rp20.000, berapakah biaya keseluruhan pengecatan?" />
+        <InputSubmitSatuan answerKey="2560000" satuan="text{rupiah}" />
 
         <Ha3 text="Soal 3" />
         <Par text="Perhatikan gambar kubus di bawah ini!" />
-        <Par text="Jika sisi atas dan sisi bawah kubus tersebut dicat dengan warna merah, sedangkan sisi-sisi lainnya dicat dengan warna biru, kemudian kubus dipotong menjadi 64 kubus satuan, tentukan banyaknya kubus satuan yang memiliki warna biru saja!" />
+        <Par text="Jika sisi atas dan sisi bawah kubus tersebut dicat dengan warna merah, sedangkan sisi-sisi lainnya dicat dengan warna biru, kemudian kubus dipotong menjadi 64 kubus satuan, tentukan banyaknya kubus satuan yang tidak memiliki warna merah!" />
+        <Simulasi
+          urlAR="https://mywebar.com/p/objek1volumekubus"
+          model3D={urlAnim + "kubus-64.glb"}
+          scale={0.7}
+          buttonSwitch={false}
+          buttonActive={false}
+        />
+        <InputSubmitSatuan answerKey="32" satuan="text{kubus}" />
 
         {/* <div className="flex items-start gap-2 flex-row">
           <span className="pt-3">1.</span>
