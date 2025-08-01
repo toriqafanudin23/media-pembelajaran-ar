@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import Simulasi from '../components/SimulasiAR';
-import { Ha2, Par } from '../components/Text';
-import Image from '../components/Image';
-import InputSubmitSatuan from '../components/InputSubmitSatuan';
-import TimerMundur from '../components/Timer';
+import { useState } from "react";
+import Simulasi from "../components/SimulasiAR";
+import { Ha2, Par } from "../components/Text";
+import Image from "../components/Image";
+import InputSubmitSatuan from "../components/InputSubmitSatuan";
+import TimerMundur from "../components/Timer";
+import { Link } from "react-router-dom";
 
 const Soal1 = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
@@ -12,7 +13,7 @@ const Soal1 = () => {
       <Par text="Sebuah balok memiliki alas berbentuk persegi dengan ukuran \(6 \times 6\) satuan, dan tingginya \(3\) satuan. Di dalam balok itu ada rongga berbentuk limas segiempat beraturan, dengan puncaknya tepat di tengah alas balok. Berapa sisa volume balok setelah dikurangi volume rongga tersebut?" />
       <Simulasi
         urlAR="https://mywebar.com/p/objek6jaringjaringkubus"
-        model3D={urlAnim + 'dua-per-tiga-balok.glb'}
+        model3D={urlAnim + "dua-per-tiga-balok.glb"}
         buttonActive={false}
         buttonSwitch={false}
         scale={1.5}
@@ -78,12 +79,13 @@ const Quiz = () => {
           {/* Tombol Submit di atas */}
           <div className="flex justify-end">
             {isLast && (
-              <button
+              <Link
+                to="/home"
                 type="submit"
                 className="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 transition"
               >
                 Submit
-              </button>
+              </Link>
             )}
           </div>
 
@@ -113,7 +115,7 @@ const Quiz = () => {
 
         {/* Card Soal */}
         <div>
-          <Ha2 text={'Soal ' + (number + 1)} />
+          <Ha2 text={"Soal " + (number + 1)} />
           <CurrentSoal />
         </div>
       </div>

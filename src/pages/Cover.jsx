@@ -1,12 +1,12 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, OrbitControls } from '@react-three/drei';
-import * as THREE from 'three';
-import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF, OrbitControls } from "@react-three/drei";
+import * as THREE from "three";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Model = () => {
   const gltf = useGLTF(
-    'https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/animasi/animasi-jaring-kubus-2.glb'
+    "https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/animasi/animasi-jaring-kubus-2.glb"
   );
 
   const mixer = useRef();
@@ -36,14 +36,22 @@ const Cover = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-slate-100 text-slate-800 px-6 md:px-20 py-10 inter-primary sm:max-w-xl mx-auto">
       <header className="mb-10">
-        <h1 className="text-sm text-teal-500 font-semibold tracking-widest uppercase">
-          Matematika SMP
-        </h1>
+        <div className="flex flex-row justify-between items-center">
+          <h1 className="text-teal-500 font-semibold tracking-widest uppercase text-left">
+            Matematika SMP
+          </h1>
+          <img
+            src="https://hmgdlcwzpmbgvfpaiylz.supabase.co/storage/v1/object/public/images/images/logouad.png"
+            alt="Logo UAD"
+            className="w-18 h-18 object-contain"
+          />
+        </div>
+
         <h2 className="text-4xl md:text-5xl font-extrabold text-slate-800 mt-2 leading-tight">
           Bangun Ruang Sisi Datar
         </h2>
         <p className="text-lg text-slate-600 mt-2">
-          Media Pembelajaran Berbasis{' '}
+          Media Pembelajaran Berbasis{" "}
           <span className="text-teal-500 font-medium">Augmented Reality</span>
         </p>
       </header>
@@ -72,7 +80,7 @@ const Cover = () => {
       <footer className="mt-6 text-sm text-slate-500">
         <p>SMP Kelas VIII</p>
         <p>
-          Dikembangkan oleh{' '}
+          Dikembangkan oleh{" "}
           <span className="text-slate-700 font-semibold">Toriq Afanudin</span>
         </p>
       </footer>
