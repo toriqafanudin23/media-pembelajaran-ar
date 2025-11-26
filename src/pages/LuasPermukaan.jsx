@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import { Ha1, Ha2, Par } from '../components/Text';
-import Navigasi from '../components/Navigasi';
-import NavFooter from '../components/NavFooter';
-import Image from '../components/Image';
-// import SimulasiStatis from '../components/SimulasiStatis';
-import Simulasi from '../components/SimulasiAR';
+import { Ha1, Ha2, Par } from '../components/ui/Text';
+import Navigasi from '../components/layout/Navigasi';
+import NavFooter from '../components/layout/NavFooter';
+import Image from '../components/ui/Image';
+// import SimulasiStatis from '../components/features/SimulasiStatis';
+import Simulasi from '../components/features/SimulasiAR';
 
 const LuasPermukaan = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
   const urlIcon = import.meta.env.VITE_URL_ICON;
-  const [buttonGanti, setButtonGanti] = useState(true);
+  const [buttonGanti, _setButtonGanti] = useState(true);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -28,7 +28,7 @@ const LuasPermukaan = () => {
   };
   return (
     <>
-      <div className="min-h-screen bg-white px-6 pt-18 mb-4 inter-primary text-slate-800 sm:w-xl mx-auto">
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 sm:w-xl mx-auto">
         <Navigasi />
         <Ha1 text="Luas Permukaan Bangun Ruang Sisi Datar" />
         <Image src="kardus-img.png" nama="Gambar 13. Kardus" />

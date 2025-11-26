@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import InputSubmitSatuan from '../components/InputSubmitSatuan';
-import NavFooter from '../components/NavFooter';
-import Navigasi from '../components/Navigasi';
-import { Ha2, Par } from '../components/Text';
-import Image from '../components/Image';
-import Simulasi from '../components/SimulasiAR';
+import InputSubmit from '../components/ui/InputSubmit';
+import NavFooter from '../components/layout/NavFooter';
+import Navigasi from '../components/layout/Navigasi';
+import { Ha2, Par } from '../components/ui/Text';
+import Image from '../components/ui/Image';
+import Simulasi from '../components/features/SimulasiAR';
 
 const LuasPermukaanBalok = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
@@ -22,7 +22,7 @@ const LuasPermukaanBalok = () => {
   };
   return (
     <>
-      <div className="min-h-screen bg-white px-6 pt-18 mb-4 inter-primary text-slate-800 sm:w-xl mx-auto">
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 sm:w-xl mx-auto">
         <Navigasi />
         <Ha2 text="B. Luas Permukaan Balok" />
         <Par text="Sebelumnya, menghitung luas permukaan kubus cukup mudah karena semua sisi kubus berbentuk persegi dengan ukuran yang sama. Oleh karena itu, luas permukaannya dapat dihitung dengan rumus $$L = 6 \times r^2.$$ Sementara itu, pada balok, keenam sisinya tidak memiliki ukuran yang sama, sehingga diperlukan pendekatan lain untuk menghitung luas permukaannya. Sebelum itu, akan ditunjukkan jaring-jaring balok." />
@@ -83,7 +83,7 @@ const LuasPermukaanBalok = () => {
         />
         <Par text="Sekarang coba kamu gunakan rumus yang telah didapat, untuk menghitung luas permukaan balok berikut!" />
         <Image src="balok-8x5x4.png" scale={1} width="300px" />
-        <InputSubmitSatuan answerKey="184" satuan="text{cm}^2" />
+        <InputSubmit answerKey="184" satuan="text{cm}^2" />
       </div>
       <NavFooter prev="/luas-permukaan" next="/latihan-soal-luas-permukaan" />
     </>

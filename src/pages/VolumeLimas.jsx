@@ -1,15 +1,15 @@
-import NavFooter from '../components/NavFooter';
-import Navigasi from '../components/Navigasi';
-import { Ha2, Par } from '../components/Text';
-import Simulasi from '../components/SimulasiAR';
-import Image from '../components/Image';
-import SimulasiStatis from '../components/SimulasiStatis';
+import NavFooter from '../components/layout/NavFooter';
+import Navigasi from '../components/layout/Navigasi';
+import { Ha2, Par } from '../components/ui/Text';
+import Simulasi from '../components/features/SimulasiAR';
+import Image from '../components/ui/Image';
+import SimulasiStatis from '../components/features/SimulasiStatis';
 
 const VolumeLimas = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
   return (
     <>
-      <div className="min-h-screen bg-white px-6 py-16 mb-4 inter-primary text-slate-800 sm:max-w-xl mx-auto">
+      <div className="min-h-screen bg-white px-6 py-20 pb-24 inter-primary text-slate-800 sm:max-w-xl mx-auto">
         <Navigasi />
         <Ha2 text="D. Volume Limas" />
         <Par text="Sebelumnya, kita telah mempelajari cara mencari volume bangun ruang yang memiliki bentuk alas dan tutup yang sama, seperti kubus, balok, dan prisma. Sekarang, bagaimana jika bentuk bangun ruangnya seperti berikut?" />

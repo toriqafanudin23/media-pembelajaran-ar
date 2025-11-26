@@ -1,13 +1,13 @@
-import NavFooter from '../components/NavFooter';
-import Navigasi from '../components/Navigasi';
-import { Ha2,Ha3, Par } from '../components/Text';
-import Image from '../components/Image';
-import InputSubmitSatuan from '../components/InputSubmitSatuan';
+import NavFooter from '../components/layout/NavFooter';
+import Navigasi from '../components/layout/Navigasi';
+import { Ha2,Ha3, Par } from '../components/ui/Text';
+import Image from '../components/ui/Image';
+import InputSubmit from '../components/ui/InputSubmit';
 
-const Volume3 = () => {
+const VolumeLatihan = () => {
   return (
     <>
-      <div className="min-h-screen bg-white px-6 py-16 mb-4 inter-primary text-slate-800 sm:max-w-xl mx-auto">
+      <div className="min-h-screen bg-white px-6 py-20 pb-24 inter-primary text-slate-800 sm:max-w-xl mx-auto">
         <Navigasi />
         <Ha2 text="Latihan Soal dan Pembahasan" />
         <Ha3 text="Soal 1"/>
@@ -15,7 +15,7 @@ const Volume3 = () => {
         <Image src="bak-mandi-2.png" width='300px' />
         <Par text="Pembahasan:<br />Jika diukur dari luar, bak mandi memiliki ukuran:<br />\( p = 100 \text{ cm} \)<br />\( l = 50 \text{ cm} \)<br />\( t = 60 \text{ cm} \)<br />Karena ketebalan dinding \( 10 \text{ cm} \), maka ukuran bagian dalam bak mandi menjadi:<br />\( p' = 100 - 2 \times 10 = 80 \text{ cm} \)<br />\( l' = 50 - 2 \times 10 = 30 \text{ cm} \)<br />\( t' = 60 \text{ cm} \)<br />Sehingga volume air yang dapat ditampung bisa dihitung dengan:<br />\( V = p' \times l' \times t' \)<br />Jadi volume air yang dapat ditampung adalah" />
 
-        <InputSubmitSatuan answerKey='144' satuan='text{liter}' />
+        <InputSubmit answerKey='144' satuan='text{liter}' />
 
         <Ha3 text="Soal 2" />
         <Par text="Andi sedang membangun rumah di pedesaan. Pada proses pembangunan, ia kekurangan batu bata sehingga memutuskan untuk membeli 100 batu bata. Ukuran batu bata \( 20 \text{ cm} \times 10 \text{ cm} \times 5 \text{ cm} \). Jika lahan untuk menyimpan batu bata yang dimiliki Andi adalah \( 1 \text{ m} \times 50 \text{ cm} \), berapa tinggi susunan batu bata agar dapat memenuhi lahan tersebut?" />
@@ -101,4 +101,4 @@ const Volume3 = () => {
   );
 };
 
-export default Volume3;
+export default VolumeLatihan;

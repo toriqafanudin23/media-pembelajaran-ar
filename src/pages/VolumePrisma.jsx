@@ -1,15 +1,15 @@
-import NavFooter from '../components/NavFooter';
-import Navigasi from '../components/Navigasi';
-import { Ha2, Par, ParLatex } from '../components/Text';
-import SimulasiStatis from '../components/SimulasiStatis';
-import Image from '../components/Image';
-import InputSubmitSatuan from '../components/InputSubmitSatuan';
+import NavFooter from '../components/layout/NavFooter';
+import Navigasi from '../components/layout/Navigasi';
+import { Ha2, Par, ParLatex } from '../components/ui/Text';
+import SimulasiStatis from '../components/features/SimulasiStatis';
+import Image from '../components/ui/Image';
+import InputSubmit from '../components/ui/InputSubmit';
 
 const VolumePrisma = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
   return (
     <>
-      <div className="min-h-screen bg-white px-6 py-16 mb-4 inter-primary text-slate-800 sm:max-w-xl mx-auto">
+      <div className="min-h-screen bg-white px-6 py-20 pb-24 inter-primary text-slate-800 sm:max-w-xl mx-auto">
         <Navigasi />
         <Ha2 text="C. Volume Prisma" />
         <Par
@@ -85,7 +85,7 @@ const VolumePrisma = () => {
           scale={1.2}
         />
         <div className="flex mx-auto w-full pl-4">
-          <InputSubmitSatuan answerKey="42" />
+          <InputSubmit answerKey="42" />
         </div>
       </div>
       <NavFooter prev="/volume-3" next="/volume-limas" />

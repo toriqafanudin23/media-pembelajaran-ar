@@ -1,5 +1,5 @@
-import Image from './Image';
-import InputSubmitSatuan from './InputSubmitSatuan';
+import Image from '../ui/Image';
+import InputSubmit from '../ui/InputSubmit';
 
 const SoalSimpel = ({ no, soal, answerKey }) => {
   return (
@@ -17,7 +17,7 @@ const SoalSimpel = ({ no, soal, answerKey }) => {
         </div>
 
         {/* Input */}
-        <InputSubmitSatuan answerKey={answerKey} />
+        <InputSubmit answerKey={answerKey} />
       </div>
     </div>
   );

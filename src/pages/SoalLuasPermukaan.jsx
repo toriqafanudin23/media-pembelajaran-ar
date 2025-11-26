@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import Navigasi from "../components/Navigasi";
-import NavFooter from "../components/NavFooter";
-import { Ha2, Par, Ha3 } from "../components/Text";
-import Simulasi from "../components/SimulasiAR"
-import Image from "../components/Image";
-import InputSubmitSatuan from "../components/InputSubmitSatuan";
+import Navigasi from "../components/layout/Navigasi";
+import NavFooter from "../components/layout/NavFooter";
+import { Ha2, Par, Ha3 } from "../components/ui/Text";
+import Simulasi from "../components/features/SimulasiAR"
+import Image from "../components/ui/Image";
+import InputSubmit from "../components/ui/InputSubmit";
 
 const LatihanSoalLP = () => {
   const urlAnim = import.meta.env.VITE_URL_ANIM;
@@ -13,17 +13,17 @@ const LatihanSoalLP = () => {
   }, []);
   return (
     <>
-      <div className="min-h-screen bg-white px-6 pt-18 mb-4 inter-primary text-slate-800 sm:w-xl mx-auto">
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 sm:w-xl mx-auto">
         <Navigasi />
         <Ha2 text="Latihan Soal" />
         <Ha3 text="Soal 1" />
         <Par text="Sebuah karton memiliki ukuran \( 65 \times 65 \text{ cm} \) per lembarnya. Karton tersebut akan digunakan untuk membuat kotak kado berukuran \( 10 \times 12 \times 20 \text{ cm} \). Jika jumlah kotak kado yang akan dibuat adalah 200 buah, berapakah jumlah minimal lembar karton yang dibutuhkan?" />
         <Image src="jaring-64x64.png" scale={0.8} />
-        <InputSubmitSatuan answerKey="100" satuan="text{lembar}" />
+        <InputSubmit answerKey="100" satuan="text{lembar}" />
 
         <Ha3 text="Soal 2" />
         <Par text="Sebuah aula berbentuk balok dengan ukuran panjang 9 meter, lebar 7 meter, dan tinggi 4 meter. Aula tersebut akan dicat warna biru pada bagian dinding dalamnya. Jika biaya cat per meter persegi adalah Rp20.000, berapakah biaya keseluruhan pengecatan?" />
-        <InputSubmitSatuan answerKey="2560000" satuan="text{rupiah}" />
+        <InputSubmit answerKey="2560000" satuan="text{rupiah}" />
 
         <Ha3 text="Soal 3" />
         <Par text="Perhatikan gambar kubus di bawah ini!" />
@@ -35,7 +35,7 @@ const LatihanSoalLP = () => {
           buttonSwitch={false}
           buttonActive={false}
         />
-        <InputSubmitSatuan answerKey="32" satuan="text{kubus}" />
+        <InputSubmit answerKey="32" satuan="text{kubus}" />
 
         {/* <div className="flex items-start gap-2 flex-row">
           <span className="pt-3">1.</span>
@@ -54,7 +54,7 @@ const LatihanSoalLP = () => {
             $$PR^2 = PQ^2 + QR^2$$
             $$\text{bisa dilanjutkan sendiri ...}$$"
             />
-            <InputSubmitSatuan answerKey="52" satuan="text{cm}^2" />
+            <InputSubmit answerKey="52" satuan="text{cm}^2" />
           </div>
         </div>
 
@@ -69,21 +69,21 @@ const LatihanSoalLP = () => {
             $$r=5$$
             $$L=6 \times r^2$$Jadi luas permukaan kubus tersebut adalah ..."
             />
-            <InputSubmitSatuan answerKey="150" satuan="text{cm}^2" />
+            <InputSubmit answerKey="150" satuan="text{cm}^2" />
           </div>
         </div>
         <div className="flex items-start gap-2 flex-row">
           <span className="pt-3">3.</span>
           <div>
             <Par text="Diketahui luas permukaan sebuah kubus adalah \( 384 \text{ cm}^2 \). Tentukan panjang rusuk kubus tersebut!" />
-            <InputSubmitSatuan answerKey="8" satuan="text{cm}" />
+            <InputSubmit answerKey="8" satuan="text{cm}" />
           </div>
         </div>
         <div className="flex items-start gap-2 flex-row">
           <span className="pt-3">4.</span>
           <div>
             <Par text="Sebuah balok memiliki panjang \(p\), lebar \(l\), dan tinggi \(t\) dengan \(p = 2l\) dan \(t = \frac{1}{2}p\). Jika luas permukaan balok tersebut adalah \(250 \text{ cm}^2\), tentukan panjang \(p\)!" />
-            <InputSubmitSatuan answerKey="10" satuan="text{cm}" />
+            <InputSubmit answerKey="10" satuan="text{cm}" />
           </div>
         </div> */}
       </div>
