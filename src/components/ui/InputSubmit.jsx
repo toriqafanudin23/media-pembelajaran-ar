@@ -1,31 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useMathJax } from '../../hooks/useMathJax';
+import { playCorrectSound, playWrongSound } from '../../utils/audio';
+import { ICONS } from '../../constants/urls';
 
+/**
+ * Input component with submit button for quiz answers
+ * @param {Object} props
+ * @param {string} props.answerKey - Correct answer
+ * @param {string} props.placeholder - Input placeholder text
+ * @param {string} props.satuan - LaTeX unit notation (optional)
+ */
 const InputSubmit = ({ answerKey, placeholder = 'Ketik jawabanmu...', satuan = null }) => {
   const [inputValue, setInputValue] = useState('');
   const [status, setStatus] = useState(null);
-  const urlSound = import.meta.env.VITE_URL_SOUND;
-  const urlIcon = import.meta.env.VITE_URL_ICON;
+
+  useMathJax([satuan, answerKey]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const soundBenar = urlSound + 'benar.mp3';
-    const soundSalah = urlSound + 'touch.mp3';
-
-    if (inputValue.trim().toLowerCase() === answerKey.trim().toLowerCase()) {
-      new Audio(soundBenar).play();
+    const isCorrect = inputValue.trim().toLowerCase() === answerKey.trim().toLowerCase();
+    
+    if (isCorrect) {
+      playCorrectSound();
       setStatus('benar');
     } else {
-      new Audio(soundSalah).play();
+      playWrongSound();
       setStatus('salah');
     }
   };
-
-  useEffect(() => {
-    if (satuan && window.MathJax?.typesetPromise) {
-      window.MathJax.typesetPromise();
-    }
-  }, [satuan, answerKey]);
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col mt-2 w-full max-w-md">
@@ -57,36 +60,48 @@ const InputSubmit = ({ answerKey, placeholder = 'Ketik jawabanmu...', satuan = n
           type="submit"
           className="p-3 rounded-xl shadow-md transition-all duration-200 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:scale-105 active:scale-95 flex-shrink-0"
         >
-          <img src={urlIcon + 'cek.png'} alt="Submit" className="w-6 h-6" />
+          <img src={ICONS.CHECK} alt="Submit" className="w-6 h-6" />
         </button>
       </div>
 
-      {/* Feedback Messages with Animation */}
-      <div className="mt-2 min-h-[24px]">
-        {status === 'benar' && (
-          <div className="flex items-center gap-2 animate-fade-in">
-            <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
-              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <p className="text-green-600 font-semibold text-sm">Benar! Luar biasa! 🎉</p>
-          </div>
-        )}
-        {status === 'salah' && (
-          <div className="flex items-center gap-2 animate-fade-in">
-            <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center">
-              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </div>
-            <p className="text-red-600 font-semibold text-sm">Coba lagi! 💪</p>
-          </div>
-        )}
-      </div>
+      {/* Feedback Messages */}
+      <FeedbackMessage status={status} />
     </form>
   );
 };
 
-export default InputSubmit;
+/**
+ * Feedback message component
+ * @param {Object} props
+ * @param {string} props.status - Status ('benar' or 'salah')
+ */
+const FeedbackMessage = ({ status }) => {
+  if (!status) {
+    return <div className="mt-2 min-h-[24px]"></div>;
+  }
 
+  const isCorrect = status === 'benar';
+  const bgColor = isCorrect ? 'bg-green-500' : 'bg-red-500';
+  const textColor = isCorrect ? 'text-green-600' : 'text-red-600';
+  const message = isCorrect ? 'Benar! Luar biasa! 🎉' : 'Coba lagi! 💪';
+  const icon = isCorrect ? (
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+  ) : (
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+  );
+
+  return (
+    <div className="mt-2 min-h-[24px]">
+      <div className="flex items-center gap-2 animate-fade-in">
+        <div className={`w-5 h-5 rounded-full ${bgColor} flex items-center justify-center`}>
+          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {icon}
+          </svg>
+        </div>
+        <p className={`${textColor} font-semibold text-sm`}>{message}</p>
+      </div>
+    </div>
+  );
+};
+
+export default InputSubmit;

@@ -29,7 +29,7 @@ const LuasPermukaan = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 sm:w-xl mx-auto">
-        <Navigasi />
+        <Navigasi pageNumber="7" />
         <Ha1 text="Luas Permukaan Bangun Ruang Sisi Datar" />
         <Image src="kardus-img.png" nama="Gambar 13. Kardus" />
         <Ha2 text="A. Luas Permukaan Kubus" />

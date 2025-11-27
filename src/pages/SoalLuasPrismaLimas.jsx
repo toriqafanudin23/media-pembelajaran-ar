@@ -10,7 +10,7 @@ const SoalLuasPrismaLimas = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 sm:w-xl mx-auto">
-        <Navigasi />
+        <Navigasi pageNumber="12" />
         <Ha2 text="Latihan Soal" />
         <Ha3 text="Soal 1" />
         <Par text="Sebuah tenda memiliki pintu depan dan belakang berbentuk segitiga dengan ukuran alas 3 m dan tinggi 2 m. Panjang tenda tersebut adalah 4 m. Jika tenda tidak memiliki alas (bagian bawah) karena dipasang menggunakan patok, berapakah luas minimal kain yang diperlukan untuk membuat tenda tersebut?" />

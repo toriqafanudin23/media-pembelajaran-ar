@@ -8,7 +8,7 @@ const VolumeLatihan = () => {
   return (
     <>
       <div className="min-h-screen bg-white px-6 py-20 pb-24 inter-primary text-slate-800 sm:max-w-xl mx-auto">
-        <Navigasi />
+        <Navigasi pageNumber="3" />
         <Ha2 text="Latihan Soal dan Pembahasan" />
         <Ha3 text="Soal 1"/>
         <Par text="Diketahui sebuah bak mandi saat diukur dari luar, memiliki ukuran \( 50 \text{ cm} \times 100 \text{ cm} \times 60 \text{ cm}. \) Jika ketebalan dinding bak mandi adalah \( 10 \text{ cm} \), maka berapakah volume air yang dapat di tampung saat bak mandi terisi penuh?" />

@@ -10,7 +10,7 @@ const LuasPermukaanLimas = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 sm:w-xl mx-auto">
-        <Navigasi />
+        <Navigasi pageNumber="11" />
         <Ha2 text="D. Luas Permukaan Limas" />
         <Par text="Sebelum memulai materi tentang luas permukaan limas, terlebih dahulu kita akan mengamati jaring-jaring limas dalam bentuk animasi." />
         <Simulasi

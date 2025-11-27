@@ -9,7 +9,7 @@ const VolumeBalok = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 mx-auto sm:w-xl">
-        <Navigasi />
+        <Navigasi pageNumber="2" />
 
         <Ha2 text="B. Volume Balok" />
         <Par text="Menurutmu, apakah perbedaan antara kubus dan balok? Untuk mengetahui perbedaannya, perhatikan Gambar 7 berikut." />

@@ -23,7 +23,7 @@ const LuasPermukaanBalok = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 sm:w-xl mx-auto">
-        <Navigasi />
+        <Navigasi pageNumber="8" />
         <Ha2 text="B. Luas Permukaan Balok" />
         <Par text="Sebelumnya, menghitung luas permukaan kubus cukup mudah karena semua sisi kubus berbentuk persegi dengan ukuran yang sama. Oleh karena itu, luas permukaannya dapat dihitung dengan rumus $$L = 6 \times r^2.$$ Sementara itu, pada balok, keenam sisinya tidak memiliki ukuran yang sama, sehingga diperlukan pendekatan lain untuk menghitung luas permukaannya. Sebelum itu, akan ditunjukkan jaring-jaring balok." />
         <div className="relative">

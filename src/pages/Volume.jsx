@@ -11,7 +11,7 @@ const Volume = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-4 sm:px-6 pt-20 pb-24 inter-primary text-slate-800 mx-auto max-w-2xl">
-        <Navigasi />
+        <Navigasi pageNumber="1" />
         
         <Ha1 text="Volume Bangun Ruang Sisi Datar" />
 

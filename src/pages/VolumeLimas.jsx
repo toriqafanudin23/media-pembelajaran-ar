@@ -10,7 +10,7 @@ const VolumeLimas = () => {
   return (
     <>
       <div className="min-h-screen bg-white px-6 py-20 pb-24 inter-primary text-slate-800 sm:max-w-xl mx-auto">
-        <Navigasi />
+        <Navigasi pageNumber="5" />
         <Ha2 text="D. Volume Limas" />
         <Par text="Sebelumnya, kita telah mempelajari cara mencari volume bangun ruang yang memiliki bentuk alas dan tutup yang sama, seperti kubus, balok, dan prisma. Sekarang, bagaimana jika bentuk bangun ruangnya seperti berikut?" />
         <SimulasiStatis

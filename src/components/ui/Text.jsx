@@ -1,16 +1,14 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
+import { useMathJax } from '../../hooks/useMathJax';
 import Image from './Image';
 
+/**
+ * Paragraph component with LaTeX support
+ * @param {Object} props
+ * @param {string} props.text - Text content (can include HTML and LaTeX)
+ */
 export const Par = ({ text = '' }) => {
-  useLayoutEffect(() => {
-    // Use requestAnimationFrame untuk ensure DOM updated
-    const timeout = requestAnimationFrame(() => {
-      if (window.MathJax?.typesetPromise) {
-        window.MathJax.typesetPromise().catch(() => {});
-      }
-    });
-    return () => cancelAnimationFrame(timeout);
-  }, [text]);
+  useMathJax([text]);
 
   return (
     <p
@@ -20,6 +18,18 @@ export const Par = ({ text = '' }) => {
   );
 };
 
+/**
+ * Paragraph component for questions with solutions
+ * @param {Object} props
+ * @param {string} props.text - Question text
+ * @param {string} props.no - Question number
+ * @param {React.ReactNode} props.latex - LaTeX content
+ * @param {string} props.text2 - Additional text after solution
+ * @param {string} props.src - Image source
+ * @param {string} props.nama - Image name/caption
+ * @param {string} props.width - Image width
+ * @param {boolean} props.imgAktif - Whether to show image
+ */
 export const ParSoal = ({
   text = '',
   no = '',
@@ -30,11 +40,7 @@ export const ParSoal = ({
   width,
   imgAktif = false,
 }) => {
-  useEffect(() => {
-    if (window.MathJax?.typesetPromise) {
-      window.MathJax.typesetPromise();
-    }
-  }, [text]);
+  useMathJax([text]);
 
   return (
     <div className="flex flex-row mt-4">
@@ -56,12 +62,13 @@ export const ParSoal = ({
   );
 };
 
+/**
+ * Paragraph component specifically for LaTeX content
+ * @param {Object} props
+ * @param {React.ReactNode} props.text - LaTeX content
+ */
 export const ParLatex = ({ text }) => {
-  useEffect(() => {
-    if (window.MathJax && window.MathJax.typesetPromise) {
-      window.MathJax.typesetPromise();
-    }
-  }, [text]);
+  useMathJax([text]);
 
   return (
     <p className="leading-relaxed text-slate-700 text-justify mt-4 text-xs sm:text-sm">
@@ -70,6 +77,11 @@ export const ParLatex = ({ text }) => {
   );
 };
 
+/**
+ * Heading 1 component
+ * @param {Object} props
+ * @param {string} props.text - Heading text
+ */
 export const Ha1 = ({ text }) => {
   return (
     <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6 text-center leading-tight">
@@ -78,10 +90,20 @@ export const Ha1 = ({ text }) => {
   );
 };
 
+/**
+ * Heading 2 component
+ * @param {Object} props
+ * @param {string} props.text - Heading text
+ */
 export const Ha2 = ({ text }) => {
   return <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mt-6 mb-3">{text}</h2>;
 };
 
+/**
+ * Heading 3 component
+ * @param {Object} props
+ * @param {string} props.text - Heading text
+ */
 export const Ha3 = ({ text }) => {
   return <h2 className="text-lg sm:text-xl font-semibold text-slate-600 mt-6 mb-2">{text}</h2>;
 };

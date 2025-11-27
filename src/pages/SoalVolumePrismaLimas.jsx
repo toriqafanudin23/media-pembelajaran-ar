@@ -8,7 +8,7 @@ const SoalVolumePrismaLimas = () => {
     return (
         <>
             <div className="min-h-screen bg-white px-6 py-20 pb-24 inter-primary text-slate-800 sm:max-w-xl mx-auto">
-                <Navigasi />
+                <Navigasi pageNumber="6" />
                 <Ha2 text="Latihan Soal" />
                 <Ha3 text="Soal 1" />
                 <Par text="Sebuah kolam renang memiliki kedalaman maksimal 5 m dan kedalaman minimal 3 m. Lebar kolam renang tersebut 10 m dan panjangnya 30 m. Berapakah volume maksimum air yang dapat ditampung kolam renang tersebut?" />

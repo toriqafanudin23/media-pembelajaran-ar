@@ -10,7 +10,7 @@ const VolumePrisma = () => {
   return (
     <>
       <div className="min-h-screen bg-white px-6 py-20 pb-24 inter-primary text-slate-800 sm:max-w-xl mx-auto">
-        <Navigasi />
+        <Navigasi pageNumber="4" />
         <Ha2 text="C. Volume Prisma" />
         <Par
           text="Sebelumnya kamu sudah belajar cara menghitung volume kubus dan balok. Volume kubus dan balok dapat diartikan sebagai banyaknya kubus satuan yang menyusunnya, dan bisa dihitung dengan

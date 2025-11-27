@@ -14,7 +14,7 @@ const LatihanSoalLP = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 px-6 pt-20 pb-24 inter-primary text-slate-800 sm:w-xl mx-auto">
-        <Navigasi />
+        <Navigasi pageNumber="9" />
         <Ha2 text="Latihan Soal" />
         <Ha3 text="Soal 1" />
         <Par text="Sebuah karton memiliki ukuran \( 65 \times 65 \text{ cm} \) per lembarnya. Karton tersebut akan digunakan untuk membuat kotak kado berukuran \( 10 \times 12 \times 20 \text{ cm} \). Jika jumlah kotak kado yang akan dibuat adalah 200 buah, berapakah jumlah minimal lembar karton yang dibutuhkan?" />

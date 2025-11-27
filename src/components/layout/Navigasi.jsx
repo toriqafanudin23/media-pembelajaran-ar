@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navigasi = ({ onNavigate }) => {
+const Navigasi = ({ onNavigate, pageNumber }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -46,7 +46,7 @@ const Navigasi = ({ onNavigate }) => {
         }`}
       >
         {/* Logo/Title */}
-        <div className="text-white font-bold text-lg flex items-center gap-2">
+        <div className="text-white font-bold text-lg flex items-center gap-2 z-10">
           <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -54,6 +54,15 @@ const Navigasi = ({ onNavigate }) => {
           </div>
           <span className="hidden sm:inline">Media AR</span>
         </div>
+
+        {/* Page Number (Centered) */}
+        {pageNumber && (
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="w-8 h-8 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 shadow-inner">
+              <span className="text-white font-bold text-sm">{pageNumber}</span>
+            </div>
+          </div>
+        )}
 
         {/* Menu Button */}
         <button
