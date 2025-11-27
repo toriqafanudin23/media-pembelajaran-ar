@@ -1,6 +1,6 @@
-import Simulasi from '../components/features/SimulasiAR';
-import { Par } from '../components/ui/Text';
-import Image from '../components/ui/Image';
+import Simulasi from "../components/features/SimulasiAR";
+import { Par } from "../components/ui/Text";
+import Image from "../components/ui/Image";
 
 /**
  * Quiz questions configuration
@@ -10,6 +10,7 @@ import Image from '../components/ui/Image';
  * - answer: correct answer (string)
  * - unit: LaTeX unit notation (optional)
  */
+
 export const QUIZ_QUESTIONS = [
   {
     id: 1,
@@ -17,7 +18,7 @@ export const QUIZ_QUESTIONS = [
       const urlAnim = import.meta.env.VITE_URL_ANIM;
       return (
         <div className="space-y-4">
-          <Par text="Sebuah balok memiliki alas berbentuk persegi dengan ukuran \(6 \times 6\) satuan, dan tingginya \(3\) satuan. Di dalam balok itu ada rongga berbentuk limas segiempat beraturan, dengan puncaknya tepat di tengah alas balok. Berapa sisa volume balok setelah dikurangi volume rongga tersebut?" />
+          <Par text="Sebuah balok memiliki alas berbentuk persegi dengan ukuran 6 x 6 satuan, dan tingginya 3 satuan. Di dalam balok itu ada rongga berbentuk limas segiempat beraturan, dengan puncaknya tepat di tengah alas balok. Berapa sisa volume balok setelah dikurangi volume rongga tersebut?" />
           <Simulasi
             urlAR="https://mywebar.com/p/objek6jaringjaringkubus"
             model3D={urlAnim + "dua-per-tiga-balok.glb"}
@@ -29,18 +30,18 @@ export const QUIZ_QUESTIONS = [
       );
     },
     answer: "72",
-    unit: "text{satuan}^3"
+    unit: "text{satuan}^3",
   },
   {
     id: 2,
     component: () => (
       <div className="space-y-4">
-        <Par text="Andi memiliki bak mandi berukuran \(1 \text{ m} \times 1{,}5 \text{ m} \times 80 \text{ cm}\). Sebelum mandi, \( \frac{1}{4} \) bagian bak sudah terisi air. Jika Andi menghidupkan kran air dengan debit \(0{,}5\) liter per detik, berapa lama Andi harus menunggu sampai bak mandi penuh?" />
+        <Par text="Andi memiliki bak mandi berukuran 1 m x 1,5 m x 80 cm. Sebelum mandi, \( \frac{1}{4} \) bagian bak sudah terisi air. Jika Andi menghidupkan kran air dengan debit \(0{,}5\) liter per detik, berapa lama Andi harus menunggu sampai bak mandi penuh?" />
         <Image src="bak-mandi.png" width="300px" />
       </div>
     ),
     answer: "30",
-    unit: "text{menit}"
+    unit: "text{menit}",
   },
   {
     id: 3,
@@ -51,7 +52,7 @@ export const QUIZ_QUESTIONS = [
       </div>
     ),
     answer: "10000",
-    unit: "text{rupiah}"
+    unit: "text{rupiah}",
   },
   {
     id: 4,
@@ -62,8 +63,8 @@ export const QUIZ_QUESTIONS = [
       </div>
     ),
     answer: "99",
-    unit: "text{cm}^2"
-  }
+    unit: "text{cm}^2",
+  },
 ];
 
 // Quiz configuration

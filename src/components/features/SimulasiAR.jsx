@@ -1,8 +1,8 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { useEffect, useRef, useState } from 'react';
-import * as THREE from 'three';
-import { ICONS } from '../../constants/urls';
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
+import { ICONS } from "../../constants/urls";
 
 /**
  * 3D Model component with animation support
@@ -133,23 +133,80 @@ const Simulasi3D = ({ model3D, scale, buttonActive }) => {
 };
 
 /**
- * AR Mode component (iframe wrapper)
+ * AR Mode component with native fullscreen support
  * @param {Object} props
  * @param {string} props.urlAR - URL to AR experience
+ * @param {Function} props.onToggleFullscreen - Callback to toggle fullscreen
+ * @param {Object} props.containerRef - Ref to container element
  */
-const ModeAR = ({ urlAR }) => {
+const ModeAR = ({ urlAR, onToggleFullscreen, containerRef }) => {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, []);
+
   return (
-    <iframe
-      src={urlAR}
-      className="w-full h-full border-none"
-      allow="camera; gyroscope; accelerometer; magnetometer; xr-spatial-tracking; microphone"
-      title="WebAR Viewer"
-    ></iframe>
+    <div className="w-full h-full relative bg-black">
+      <iframe
+        src={urlAR}
+        className="w-full h-full border-none"
+        allow="camera; gyroscope; accelerometer; magnetometer; xr-spatial-tracking; microphone"
+        title="WebAR Viewer"
+      ></iframe>
+
+      {/* Fullscreen Toggle Button */}
+      <button
+        onClick={onToggleFullscreen}
+        className={`${buttonClass} absolute top-3 right-3 z-10`}
+        title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+      >
+        {isFullscreen ? (
+          // Exit Fullscreen Icon
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
+          // Fullscreen Icon
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+            />
+          </svg>
+        )}
+      </button>
+    </div>
   );
 };
 
 /**
- * Main Simulasi component with 3D/AR mode switching
+ * Main Simulasi component with 3D/AR mode switching and native fullscreen support
  * @param {Object} props
  * @param {string} props.urlAR - URL to AR experience
  * @param {string} props.model3D - URL to 3D model file
@@ -166,25 +223,69 @@ const Simulasi = ({
   buttonActive = true,
   buttonSwitch = true,
 }) => {
-  const [mode, setMode] = useState('3D');
+  const [mode, setMode] = useState("3D");
+  const containerRef = useRef(null);
 
   const handleSwitch = () => {
-    setMode((prev) => (prev === '3D' ? 'AR' : '3D'));
+    setMode((prev) => (prev === "3D" ? "AR" : "3D"));
   };
 
-  const buttonIcon = mode === '3D' ? ICONS.BUTTON_AR : ICONS.BUTTON_3D;
+  /**
+   * Toggle native fullscreen mode
+   * Works on mobile and desktop browsers
+   */
+  const handleToggleFullscreen = async () => {
+    if (!containerRef.current) return;
+
+    try {
+      if (!document.fullscreenElement) {
+        // Enter fullscreen
+        if (containerRef.current.requestFullscreen) {
+          await containerRef.current.requestFullscreen();
+        } else if (containerRef.current.webkitRequestFullscreen) {
+          // Safari
+          await containerRef.current.webkitRequestFullscreen();
+        } else if (containerRef.current.mozRequestFullScreen) {
+          // Firefox
+          await containerRef.current.mozRequestFullScreen();
+        } else if (containerRef.current.msRequestFullscreen) {
+          // IE/Edge
+          await containerRef.current.msRequestFullscreen();
+        }
+      } else {
+        // Exit fullscreen
+        if (document.exitFullscreen) {
+          await document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          await document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          await document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          await document.msExitFullscreen();
+        }
+      }
+    } catch (error) {
+      console.warn("Fullscreen error:", error);
+    }
+  };
+
+  const buttonIcon = mode === "3D" ? ICONS.BUTTON_AR : ICONS.BUTTON_3D;
 
   return (
     <>
-      <div className={containerClass}>
-        {mode === '3D' ? (
+      <div ref={containerRef} className={containerClass}>
+        {mode === "3D" ? (
           <Simulasi3D
             model3D={model3D}
             scale={scale}
             buttonActive={buttonActive}
           />
         ) : (
-          <ModeAR urlAR={urlAR} />
+          <ModeAR
+            urlAR={urlAR}
+            onToggleFullscreen={handleToggleFullscreen}
+            containerRef={containerRef}
+          />
         )}
 
         {/* Mode Switch Button */}
@@ -197,6 +298,7 @@ const Simulasi = ({
           </button>
         )}
       </div>
+
       <p className="text-center text-sm text-slate-600 font-bold mt-2">
         {nama}
       </p>
