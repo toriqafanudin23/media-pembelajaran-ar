@@ -73,9 +73,22 @@ const buttonClass = `
  * @param {number} props.scale - Model scale
  * @param {boolean} props.buttonActive - Whether to show playback controls
  */
-const Simulasi3D = ({ model3D, scale, buttonActive }) => {
+const Simulasi3D = ({ model3D, scale, buttonActive, onToggleFullscreen }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playDirection, setPlayDirection] = useState(1);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Listen for fullscreen changes so icon updates correctly
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, []);
 
   const handlePlay = () => {
     setPlayDirection(1);
@@ -104,6 +117,43 @@ const Simulasi3D = ({ model3D, scale, buttonActive }) => {
           scale={scale}
         />
       </Canvas>
+
+      {/* Fullscreen Toggle Button for 3D Mode */}
+      <button
+        onClick={onToggleFullscreen}
+        className={`${buttonClass} absolute top-3 right-3 z-10`}
+        title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+      >
+        {isFullscreen ? (
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+            />
+          </svg>
+        )}
+      </button>
 
       {/* Playback Controls */}
       {buttonActive && (
@@ -279,6 +329,7 @@ const Simulasi = ({
             model3D={model3D}
             scale={scale}
             buttonActive={buttonActive}
+            onToggleFullscreen={handleToggleFullscreen}
           />
         ) : (
           <ModeAR
