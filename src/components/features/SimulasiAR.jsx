@@ -121,7 +121,7 @@ const Simulasi3D = ({ model3D, scale, buttonActive, onToggleFullscreen }) => {
       {/* Fullscreen Toggle Button for 3D Mode */}
       <button
         onClick={onToggleFullscreen}
-        className={`${buttonClass} absolute top-3 right-3 z-10`}
+        className={`${buttonClass} absolute top-3 left-3 z-10`}
         title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
       >
         {isFullscreen ? (
