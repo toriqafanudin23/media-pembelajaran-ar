@@ -10,8 +10,10 @@ import { useEffect, useRef, useState } from "react";
  */
 const ARViewer = ({ modelUrl, onClose, isOpen }) => {
   const sceneRef = useRef(null);
+  const containerRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const [scriptsLoaded, setScriptsLoaded] = useState(false);
+  const [error, setError] = useState(null);
 
   // Load A-Frame and AR.js scripts
   useEffect(() => {
@@ -37,22 +39,30 @@ const ARViewer = ({ modelUrl, onClose, isOpen }) => {
 
     const loadScripts = async () => {
       try {
+        console.log("Loading A-Frame...");
         // Load A-Frame first
         await loadScript(
           "https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js",
           "aframe-script"
         );
 
+        console.log("Loading AR.js...");
         // Then load AR.js
         await loadScript(
           "https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js",
           "arjs-script"
         );
 
+        console.log("Scripts loaded successfully");
         setScriptsLoaded(true);
-        setIsLoading(false);
+
+        // Wait a bit for AR.js to initialize
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
       } catch (error) {
         console.error("Error loading AR scripts:", error);
+        setError("Failed to load AR scripts. Please refresh and try again.");
         setIsLoading(false);
       }
     };
@@ -63,10 +73,8 @@ const ARViewer = ({ modelUrl, onClose, isOpen }) => {
   // Cleanup AR session and camera when closing
   useEffect(() => {
     if (!isOpen && sceneRef.current) {
-      // Stop AR session
       const scene = sceneRef.current;
 
-      // Remove the scene to fully cleanup
       if (scene && scene.parentNode) {
         // Stop all video streams (camera)
         const videoElements = scene.querySelectorAll("video");
@@ -122,7 +130,29 @@ const ARViewer = ({ modelUrl, onClose, isOpen }) => {
         <div className="absolute inset-0 flex items-center justify-center bg-black/80 z-50">
           <div className="text-center">
             <div className="inline-block w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mb-4"></div>
-            <p className="text-white text-lg font-semibold">Loading AR...</p>
+            <p className="text-white text-lg font-semibold">
+              {scriptsLoaded ? "Initializing AR..." : "Loading AR..."}
+            </p>
+            <p className="text-white/60 text-sm mt-2">
+              Please allow camera access
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Error Message */}
+      {error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/90 z-50">
+          <div className="text-center max-w-md px-6">
+            <div className="text-red-500 text-6xl mb-4">⚠️</div>
+            <p className="text-white text-lg font-semibold mb-2">Error</p>
+            <p className="text-white/80 text-sm">{error}</p>
+            <button
+              onClick={onClose}
+              className="mt-6 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg"
+            >
+              Close
+            </button>
           </div>
         </div>
       )}
@@ -166,30 +196,47 @@ const ARViewer = ({ modelUrl, onClose, isOpen }) => {
         </p>
       </div>
 
-      {/* A-Frame Scene */}
-      {scriptsLoaded && (
-        <a-scene
-          ref={sceneRef}
-          vr-mode-ui="enabled: false"
-          renderer="logarithmicDepthBuffer: true; precision: medium;"
-          embedded
-          arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+      {/* A-Frame Scene Container */}
+      {scriptsLoaded && !error && (
+        <div
+          ref={containerRef}
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            overflow: "hidden",
+          }}
         >
-          {/* Marker */}
-          <a-marker preset="hiro">
-            {/* 3D Model */}
-            <a-entity
-              gltf-model={modelUrl}
-              scale="0.5 0.5 0.5"
-              position="0 0.5 0"
-              rotation="0 0 0"
-              animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear"
-            ></a-entity>
-          </a-marker>
+          <a-scene
+            ref={sceneRef}
+            vr-mode-ui="enabled: false"
+            renderer="logarithmicDepthBuffer: true; precision: medium; antialias: true; alpha: true;"
+            embedded
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "block",
+            }}
+          >
+            {/* Marker */}
+            <a-marker preset="hiro">
+              {/* 3D Model */}
+              <a-entity
+                gltf-model={modelUrl}
+                scale="0.5 0.5 0.5"
+                position="0 0.5 0"
+                rotation="0 0 0"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear"
+              ></a-entity>
+            </a-marker>
 
-          {/* Camera */}
-          <a-entity camera></a-entity>
-        </a-scene>
+            {/* Camera */}
+            <a-entity camera></a-entity>
+          </a-scene>
+        </div>
       )}
     </div>
   );
